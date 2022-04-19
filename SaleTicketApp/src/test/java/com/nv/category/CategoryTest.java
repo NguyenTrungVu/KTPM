@@ -38,11 +38,11 @@ public class CategoryTest {
     public void abc() throws SQLException{
     
         Statement stm = conn.createStatement();
-        ResultSet rs = stm.executeQuery("SELECT * FROM product");
+        ResultSet rs = stm.executeQuery("SELECT * FROM chuyenxe");
         
         while(rs.next()){
             
-            String name = rs.getString("name");
+            String name = rs.getString("tenChuyenXe");
             System.out.println(name);
         }
     }

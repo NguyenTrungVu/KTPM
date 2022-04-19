@@ -1,0 +1,47 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+VBox {
+    -fx-background-color: #417D7A;
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+
+}
+Label{
+    -fx-pref-width: 120px;
+    -fx-pref-height: 25px;
+    -fx-text-fill: #EDE6DB;
+    -fx-font-size: 16;
+
+
+}
+Text.Title{
+
+    -fx-font-size: 25;
+    -fx-pref-width: 900px;
+
+    
+    -fx-alignment: center;
+    -fx-font-size: 36;
+    -fx-fill: #FFEBC1;
+    -fx-margin: 10;
+    -fx-stroke-width: 2;
+    -fx-stroke: #826F66;
+
+}
+Button{
+    -fx-margin: 0 20px 0 20px;
+    -fx-font-size: 16;
+
+
+}
+TextField{
+    -fx-pref-width: 150px;
+    -fx-pref-height: 25px;
+}
+
+.mainFxmlClass {
+
+}

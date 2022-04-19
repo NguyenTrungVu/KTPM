@@ -22,7 +22,7 @@ public class JdbcUtils {
         }
     }
     public static Connection getConn() throws SQLException{
-        return DriverManager.getConnection("jdbc:mysql://localhost/quanlysachdb",
+        return DriverManager.getConnection("jdbc:mysql://localhost/ticketdb",
                 "root", "1234");
     }
 }
