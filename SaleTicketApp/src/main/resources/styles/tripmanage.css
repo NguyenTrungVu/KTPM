@@ -1,0 +1,75 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+* {
+    -fx-font-family: Times New Roman;
+    -fx-font-size: 18;
+}
+
+VBox{
+    -fx-spacing: 10;
+    -fx-background-color: #417D7A;
+    -fx-alignment: center;
+}
+HBox{
+    -fx-spacing: 10;
+    /*-fx-alignment: center;*/
+}
+Label{
+    -fx-text-fill: #EDE6DB;
+}
+  
+/*css heading*/
+
+
+Text.subject{
+    -fx-alignment: center;
+    -fx-font-size: 36;
+    -fx-fill: #FFEBC1;
+    -fx-margin: 10;
+    -fx-stroke-width: 2;
+    -fx-stroke: #826F66;
+   
+}
+
+/*Content*/
+Label{
+    -fx-pref-width: 130;
+}
+
+TextField, DatePicker{
+    -fx-pref-height:25;
+    -fx-pref-width: 170;
+   
+}
+
+
+
+.btFunc{
+    -fx-text-fill: #FFEFBC;
+    -fx-background-color: #1EAE98;
+    -fx-font-size: 20;
+    -fx-pref-width: 100;
+}
+
+.btArea{
+    -fx-alignment:center;
+    -fx-spacing:20;
+    -fx-pref-height: 80;
+}
+
+.lbRight{
+    -fx-pref-width: 100;
+}
+.mainVBox{
+/*    -fx-background-image: url('https://i.pinimg.com/originals/21/a2/51/21a251f75ea4ecee0e2906e83cf03102.jpg');
+    -fx-background-repeat: no-repeat; 
+    -fx-background-size: 500 500; 
+    -fx-background-position: center center;*/
+    -fx-padding: 30 10 30 15;
+}
+
+.mainFxmlClass {
+   
+}

@@ -1,0 +1,4 @@
+--patch-module
+com.nv.saleticketapp=_
+--add-reads
+com.nv.saleticketapp=ALL-UNNAMED

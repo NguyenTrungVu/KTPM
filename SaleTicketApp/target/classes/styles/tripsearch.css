@@ -1,0 +1,67 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+* {
+    -fx-font-family: Times New Roman;
+    -fx-font-size: 18;
+}
+
+VBox{
+    -fx-spacing: 10;
+    -fx-background-color: #417D7A;
+    -fx-alignment: center;
+}
+HBox{
+   
+    -fx-alignment: center;
+}
+Label{
+    -fx-text-fill: #EDE6DB;
+}
+  
+/*css heading*/
+
+
+Text.subject{
+    -fx-alignment: center;
+    -fx-font-size: 36;
+    -fx-fill: #FFEBC1;
+    -fx-padding: 10;
+    -fx-stroke-width: 2;
+    -fx-stroke: #826F66;
+   
+}
+
+/*css phần bến xe đi, bến xe đến*/
+
+.station{
+    -fx-pref-height:30;
+    -fx-min-width: 130;
+   
+}
+.stationContent{
+    -fx-pref-width: 200;
+    -fx-pref-height: 20;
+}
+ 
+
+.tripDate{
+    -fx-min-width: 100;
+}
+
+/*css bt tìm kiếm*/
+.btFunc{
+    -fx-text-fill: #FFEFBC;
+    -fx-background-color: #1EAE98;
+    -fx-font-size: 20;
+}
+
+.btSearch{
+    
+}
+
+.mainFxmlClass {
+    -fx-padding: 10;
+}
