@@ -1,7 +1,6 @@
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/PrimaryController.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/FXMLTripSearchController.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/App.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/SecondaryController.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/module-info.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/utils/JdbcUtils.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/FXMLTicketController.java
+D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\saleticketapp\App.java
+D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\saleticketapp\PrimaryController.java
+D:\Class\KTPM\TH\SaleTicketApp\src\main\java\module-info.java
+D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\conf\JdbcUtils.java
+D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\fxsaleticketapp\FXMLTicketController.java
+D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\saleticketapp\SecondaryController.java

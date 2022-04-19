@@ -1,1 +1,6 @@
+com\nv\conf\JdbcUtils.class
 module-info.class
+com\nv\saleticketapp\PrimaryController.class
+com\nv\fxsaleticketapp\FXMLTicketController.class
+com\nv\saleticketapp\SecondaryController.class
+com\nv\saleticketapp\App.class
