@@ -1,1 +1,32 @@
+<<<<<<< HEAD
 module-info.class
+=======
+com\nv\services\DuLieuQuyDinh.class
+com\nv\services\DuLieuVeXe.class
+com\nv\utils\JdbcUtils.class
+com\nv\services\DuLieuLoaiNhanVien.class
+com\nv\saleticketapp\FXMLTraCuuChuyenDiController.class
+com\nv\utils\Utils.class
+com\nv\pojo\ChuyenXe.class
+com\nv\pojo\TuyenXe.class
+com\nv\services\DuLieuTuyenXe.class
+com\nv\pojo\NhanVien.class
+com\nv\services\DuLieuXe.class
+module-info.class
+com\nv\pojo\Xe.class
+com\nv\pojo\ChiTietVeXe.class
+com\nv\saleticketapp\FXMLDoiHuyVeController.class
+com\nv\services\DuLieuNhanVien.class
+com\nv\services\DuLieuChiTietVeXe.class
+com\nv\services\DuLieuKhachHang.class
+com\nv\pojo\VeXe.class
+com\nv\saleticketapp\FXMLDatBanVeController.class
+com\nv\saleticketapp\FXMLQuanLyChuyenDiController.class
+com\nv\pojo\KhachHang.class
+com\nv\saleticketapp\App.class
+com\nv\pojo\QuyDinh.class
+com\nv\pojo\LoaiNhanVien.class
+com\nv\saleticketapp\PrimaryController.class
+com\nv\services\DuLieuChuyenXe.class
+com\nv\saleticketapp\SecondaryController.class
+>>>>>>> 25ebe7abf9e7cd1536ceb4ad17a8da2b175203e4
