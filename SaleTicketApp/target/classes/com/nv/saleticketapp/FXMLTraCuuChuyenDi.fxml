@@ -36,7 +36,7 @@
                         <HBox layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="396.0">
                            <children>
                               <Label prefHeight="22.0" prefWidth="133.0" styleClass="station" text="Bến xe đến" />
-                              <ComboBox prefWidth="150.0" styleClass="stationContent" />
+                              <ComboBox fx:id="cbNoiDen" prefWidth="150.0" styleClass="stationContent" />
                            </children>
                         </HBox>
                      </children>
