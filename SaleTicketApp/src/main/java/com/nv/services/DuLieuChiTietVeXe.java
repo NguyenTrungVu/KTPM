@@ -18,7 +18,7 @@ import java.util.List;
  * @author inmac
  */
 public class DuLieuChiTietVeXe {
-    public List<ChiTietVeXe> getXe() throws SQLException{
+    public List<ChiTietVeXe> getChiTietVeXe() throws SQLException{
         List<ChiTietVeXe> results = new ArrayList<>();
         try(Connection conn = JdbcUtils.getConn()){
             Statement  stm = conn.createStatement();
