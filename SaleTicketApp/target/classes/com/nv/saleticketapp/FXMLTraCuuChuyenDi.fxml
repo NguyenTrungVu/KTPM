@@ -24,7 +24,7 @@
                         <HBox prefHeight="34.0" prefWidth="396.0">
                            <children>
                               <Label prefHeight="22.0" prefWidth="133.0" styleClass="station" text="Ngày khởi hành" />
-                              <DatePicker styleClass="stationContent" />
+                              <DatePicker fx:id="dpNgayDi" styleClass="stationContent" />
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="396.0">
@@ -50,7 +50,7 @@
             </HBox>
          </children>
       </HBox>
-      <Button mnemonicParsing="false" styleClass="btFunc" text="Tìm kiếm" />
+      <Button mnemonicParsing="false" onAction="#traCuuChuyenDi" styleClass="btFunc" text="Tìm kiếm" />
       <TableView prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />

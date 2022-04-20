@@ -7,6 +7,7 @@ package com.nv.saleticketapp;
 import com.nv.pojo.TuyenXe;
 import com.nv.services.DuLieuChuyenXe;
 import com.nv.services.DuLieuTuyenXe;
+import com.nv.utils.Utils;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,9 +16,12 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 
 /**
  * FXML Controller class
@@ -28,6 +32,7 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
     
     @FXML private ComboBox<String> cbNoiDi;
     @FXML private ComboBox<String> cbNoiDen;
+    @FXML private DatePicker dpNgayDi;
 
     /**
      * Initializes the controller class.
@@ -40,6 +45,17 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
         xuLiComboBoxNoiDen();
 
     }    
+    
+    
+    public void traCuuChuyenDi(ActionEvent evt){
+        
+        DuLieuTuyenXe d = new DuLieuTuyenXe();
+        int maTuyen = d.getMaTuyen(this.cbNoiDi.getValue().toString(), this.cbNoiDen.getValue().toString());
+        Utils.getBox(String.valueOf(maTuyen), Alert.AlertType.INFORMATION).show();
+//        Utils.getBox(this.cbNoiDi.getValue().toString(), Alert.AlertType.INFORMATION).show();
+
+        
+    }
     
     
     public void xuLiComboBoxNoiDi(){
