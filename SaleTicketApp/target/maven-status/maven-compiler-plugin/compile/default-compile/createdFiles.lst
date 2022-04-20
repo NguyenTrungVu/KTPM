@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-module-info.class
-=======
 com\nv\services\DuLieuQuyDinh.class
 com\nv\services\DuLieuVeXe.class
 com\nv\utils\JdbcUtils.class
@@ -29,4 +26,3 @@ com\nv\pojo\LoaiNhanVien.class
 com\nv\saleticketapp\PrimaryController.class
 com\nv\services\DuLieuChuyenXe.class
 com\nv\saleticketapp\SecondaryController.class
->>>>>>> 25ebe7abf9e7cd1536ceb4ad17a8da2b175203e4

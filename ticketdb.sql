@@ -56,8 +56,8 @@ DROP TABLE IF EXISTS `chuyenxe`;
 CREATE TABLE `chuyenxe` (
   `maChuyenXe` int NOT NULL AUTO_INCREMENT,
   `tenChuyenXe` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gioKhoiHanh` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ngayDi` datetime DEFAULT NULL,
+  `gioKhoiHanh` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ngayDi` date DEFAULT NULL,
   `gia` float DEFAULT '3',
   `maTuyen` int NOT NULL,
   PRIMARY KEY (`maChuyenXe`),
@@ -88,9 +88,9 @@ CREATE TABLE `khachhang` (
   `tenKh` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `gioiTinh` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `diaChi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dienThoai` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `soDienThoai` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`maKh`),
-  UNIQUE KEY `dienThoai_UNIQUE` (`dienThoai`)
+  UNIQUE KEY `dienThoai_UNIQUE` (`soDienThoai`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -138,10 +138,10 @@ DROP TABLE IF EXISTS `nhanvien`;
 CREATE TABLE `nhanvien` (
   `maNv` int NOT NULL AUTO_INCREMENT,
   `tenNv` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ngaySinh` datetime DEFAULT NULL,
+  `ngaySinh` date DEFAULT NULL,
   `gioiTinh` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `diaChi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dienThoai` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `soDiienThoai` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `loaiNv` int NOT NULL,
   PRIMARY KEY (`maNv`),
   KEY `loaiNv_idx` (`loaiNv`),
@@ -197,8 +197,8 @@ DROP TABLE IF EXISTS `tuyenxe`;
 CREATE TABLE `tuyenxe` (
   `maTuyen` int NOT NULL AUTO_INCREMENT,
   `tenTuyen` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `noiDi` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `noiDen` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `noiDi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `noiDen` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`maTuyen`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -280,4 +280,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-20 12:36:13
+-- Dump completed on 2022-04-20 16:17:29
