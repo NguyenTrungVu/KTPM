@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -35,9 +36,20 @@ public class DuLieuChuyenXe {
         return results;
     }
     
-//    public List<ChuyenXe> timKiemChuyenXe(int maTuyen, Date ngayDi){
-//        
-//        
-//        
-//    }
+    public List<ChuyenXe> timKiemChuyenXe(int maTuyen, String ngayKhoiHanh) throws SQLException{
+        
+        List<ChuyenXe> results = new ArrayList<>();
+        
+        List<ChuyenXe> data = getChuyenXe();
+        
+        for (ChuyenXe d: data){
+            if(d.getMaTuyen() == maTuyen && d.getNgayDi().toString().compareTo(ngayKhoiHanh) == 0){
+                
+                results.add(d);
+            }
+        }
+        return results;
+        
+        
+    }
 }

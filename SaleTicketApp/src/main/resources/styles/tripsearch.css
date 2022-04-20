@@ -18,7 +18,7 @@ HBox{
     -fx-alignment: center;
 }
 Label{
-    -fx-text-fill: #EDE6DB;
+    -fx-text-fill: yellow;
 }
   
 /*css heading*/
@@ -64,4 +64,9 @@ Text.subject{
 
 .mainFxmlClass {
     -fx-padding: 10;
+}
+
+TableView {
+    
+    -fx-text-fill: yellow;
 }
