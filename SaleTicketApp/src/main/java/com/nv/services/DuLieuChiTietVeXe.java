@@ -22,7 +22,7 @@ public class DuLieuChiTietVeXe {
         List<ChiTietVeXe> results = new ArrayList<>();
         try(Connection conn = JdbcUtils.getConn()){
             Statement  stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("select * from quydinh");
+            ResultSet rs = stm.executeQuery("select * from chitietvexe");
             
             while(rs.next()){
                 ChiTietVeXe  x = new ChiTietVeXe(rs.getInt("maChiTietVe"), rs.getInt("maVe"), rs.getInt("maXe"), rs.getString("ghiChu"), rs.getString("viTriGhe"));

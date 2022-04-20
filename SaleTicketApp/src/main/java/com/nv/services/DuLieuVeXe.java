@@ -22,7 +22,7 @@ public class DuLieuVeXe {
         List<VeXe> results = new ArrayList<>();
         try(Connection conn = JdbcUtils.getConn()){
             Statement  stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("select * from quydinh");
+            ResultSet rs = stm.executeQuery("select * from vexe");
             
             while(rs.next()){
                 VeXe vx = new VeXe( rs.getInt("maVe"), rs.getInt("maNv"), rs.getInt("maKh"), rs.getInt("maChuyenXe"));

@@ -22,7 +22,7 @@ public class DuLieuXe {
         List<Xe> results = new ArrayList<>();
         try(Connection conn = JdbcUtils.getConn()){
             Statement  stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("select * from quydinh");
+            ResultSet rs = stm.executeQuery("select * from xe");
             
             while(rs.next()){
                 Xe x = new Xe(rs.getInt("maXe"), rs.getString("tenXe"), rs.getString("banSo"), rs.getInt("soGhe"));
