@@ -34,41 +34,6 @@ public class DuLieuVeXe {
     }
         return results;
     }
-<<<<<<< HEAD
-    public List<VeXe> getMaVe(int maKh) throws SQLException{
-        List <VeXe> cacVeXe = new ArrayList<>();
-        List <VeXe> data = getVeXe();
-        for(VeXe d: data){
-            if(d.getMaChuyenXe() == maKh)
-                cacVeXe.add(d);
-        }
-        return cacVeXe;
-        
-    } 
-    public int getMaChuyenXe(int maKh) throws SQLException{
-        
-        
-        try(Connection conn = JdbcUtils.getConn()){
-            
-            PreparedStatement  stm = conn.prepareStatement("select maChuyenXe from vexe where maKh = ?;");
-            stm.setInt(1, maKh);
-            
-            ResultSet rs = stm.executeQuery();
-            while(rs.next()){
-                return rs.getInt(1);
-        }
-    }
-        return 0;
-    }
-     public int getMaVeXeDon(int maChuyen) throws SQLException{
-    
-
-        try(Connection conn = JdbcUtils.getConn()){
-            PreparedStatement stm = conn.prepareStatement("SELECT maVe FROM vexe where maChuyenXe=?");
-            stm.setInt(1, maChuyen);
-
-            ResultSet rs = stm.executeQuery();
-=======
      
     public int getSoLuongVeDaDat(int maChuyen) throws SQLException{
     
@@ -78,7 +43,6 @@ public class DuLieuVeXe {
 
             ResultSet rs = stm.executeQuery();
             
->>>>>>> c34f80dac7e8c653868678e5b609a2fbc533f82a
             while(rs.next()){
                 return rs.getInt(1);
             }
@@ -104,8 +68,6 @@ public class DuLieuVeXe {
         return cacVeXe;
         
     } 
-<<<<<<< HEAD
-=======
     
     public int getMaVeXeDon(int maChuyen) throws SQLException{
     
@@ -125,5 +87,4 @@ public class DuLieuVeXe {
     } 
     
      
->>>>>>> c34f80dac7e8c653868678e5b609a2fbc533f82a
 }

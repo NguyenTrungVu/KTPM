@@ -6,7 +6,6 @@ package com.nv.services;
 import com.nv.pojo.KhachHang;
 import com.nv.utils.JdbcUtils;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -31,34 +30,5 @@ public class DuLieuKhachHang {
         }
     }
         return results;
-    }
-    public String getHoTen(String soDienThoai) throws SQLException{
-        try(Connection conn = JdbcUtils.getConn()){
-            PreparedStatement  stm = conn.prepareStatement("select tenKh from khachhang where soDienThoai=?;");
-            stm.setString(1, soDienThoai);
-            
-            ResultSet rs = stm.executeQuery();
-            
-            
-            while(rs.next()){
-                return rs.getString(1);
-        }
-    }
-        return null;
-    }
-    public int getMaKh(String soDienThoai) throws SQLException{
-        try(Connection conn = JdbcUtils.getConn()){
-            PreparedStatement  stm = conn.prepareStatement("select maKh from khachhang where  soDienThoai=?;");
-            stm.setString(1, soDienThoai);
-            
-            ResultSet rs = stm.executeQuery();
-            
-            
-            while(rs.next()){
-                return rs.getInt(1);
-        }
-    }
-        return 0;
-    
     }
 }

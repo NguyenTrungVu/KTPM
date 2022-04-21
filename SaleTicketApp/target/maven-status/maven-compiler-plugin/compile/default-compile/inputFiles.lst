@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/FXMLQuanLyChuyenDiController.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/services/DuLieuXe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/SecondaryController.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/FXMLDoiHuyVeController.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/services/DuLieuChiTietVeXe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/ThongTinCacVeXe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/Xe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/services/DuLieuChuyenXe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/App.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/services/DuLieuVeXe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/utils/JdbcUtils.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/VeXe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/PrimaryController.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/FXMLDatBanVeController.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/LoaiNhanVien.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/NhanVien.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/QuyDinh.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/services/DuLieuTuyenXe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/services/DuLieuLoaiNhanVien.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/services/DuLieuQuyDinh.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/ChuyenXe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/services/DuLieuNhanVien.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/services/DuLieuKhachHang.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/TuyenXe.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/saleticketapp/FXMLTraCuuChuyenDiController.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/module-info.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/utils/Utils.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/KhachHang.java
-/Users/inmac/Desktop/KTPM/SaleTicketApp/src/main/java/com/nv/pojo/ChiTietVeXe.java
-=======
 D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\services\DuLieuChiTietVeXe.java
 D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\saleticketapp\FXMLDatBanVeController.java
 D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\services\DuLieuQuyDinh.java
@@ -58,4 +27,3 @@ D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\pojo\ThongTinCacChuyenXe.jav
 D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\saleticketapp\FXMLDoiHuyVeController.java
 D:\Class\KTPM\TH\SaleTicketApp\src\main\java\module-info.java
 D:\Class\KTPM\TH\SaleTicketApp\src\main\java\com\nv\pojo\LoaiNhanVien.java
->>>>>>> c34f80dac7e8c653868678e5b609a2fbc533f82a

@@ -51,6 +51,6 @@
       </HBox>
       <Button mnemonicParsing="false" onAction="#traCuuChuyenDi" styleClass="btFunc" text="Tìm kiếm" />
       <TableView fx:id="tbThongTin" prefHeight="200.0" prefWidth="200.0" />
-      <Button mnemonicParsing="false" styleClass="btFunc" text="Thoát" />
+      <Button mnemonicParsing="false" onAction="#thoat" styleClass="btFunc" text="Thoát" />
    </children>
 </VBox>

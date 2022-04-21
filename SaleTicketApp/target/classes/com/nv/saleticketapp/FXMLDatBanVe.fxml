@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nv.saleticketapp.FXMLDatBanVeController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="QUAN LY DAT VE BAN VE" />
       <HBox prefHeight="130.0" prefWidth="754.0">
@@ -22,31 +22,31 @@
                   <HBox prefHeight="26.0" prefWidth="255.0">
                      <children>
                         <Label text="Noi di" />
-                        <TextField fx:id="txtNoiDi" alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="150.0" />
+                        <TextField alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="20.0" layoutY="20.0" prefHeight="26.0" prefWidth="255.0">
                      <children>
                         <Label text="Noi den" />
-                        <TextField fx:id="txtNoiDen" alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="150.0" />
+                        <TextField alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="20.0" layoutY="20.0" prefHeight="26.0" prefWidth="255.0">
                      <children>
                         <Label text="Ngay di" />
-                        <DatePicker fx:id="dpNgayDi" prefHeight="26.0" prefWidth="150.0" />
+                        <DatePicker prefHeight="26.0" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="34.0" prefWidth="600.0">
                      <children>
                         <Label prefHeight="18.0" prefWidth="62.0" text="Ho ten" />
-                        <TextField fx:id="txtHoTen" prefHeight="26.0" prefWidth="150.0" />
+                        <TextField prefHeight="26.0" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="32.0" prefWidth="274.0">
                      <children>
                         <Label prefHeight="25.0" prefWidth="88.0" text="So dien thoai" />
-                        <TextField fx:id="txtSoDienThoai" prefHeight="25.0" prefWidth="150.0" />
+                        <TextField prefHeight="25.0" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="34.0" prefWidth="600.0">
@@ -59,14 +59,14 @@
             </VBox>
             <VBox prefHeight="156.0" prefWidth="619.0">
                <children>
-                  <TableView fx:id="tbview" prefHeight="205.0" prefWidth="595.0" />
+                  <TableView prefHeight="205.0" prefWidth="595.0" />
                </children>
             </VBox>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="44.0" prefWidth="907.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#timVeXe" text="Tra cuu">
+            <Button mnemonicParsing="false" text="Tra cuu">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>

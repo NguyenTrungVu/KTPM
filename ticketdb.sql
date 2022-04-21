@@ -33,7 +33,7 @@ CREATE TABLE `chitietvexe` (
   KEY `fk_chtietxe_vexe_idx` (`maVe`),
   CONSTRAINT `fk_chitietve_xe` FOREIGN KEY (`maXe`) REFERENCES `xe` (`maXe`),
   CONSTRAINT `fk_chtietxe_vexe` FOREIGN KEY (`maVe`) REFERENCES `vexe` (`maVe`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `chitietvexe` (
 
 LOCK TABLES `chitietvexe` WRITE;
 /*!40000 ALTER TABLE `chitietvexe` DISABLE KEYS */;
-INSERT INTO `chitietvexe` VALUES (1,1,1,NULL,NULL),(2,2,2,NULL,NULL);
+INSERT INTO `chitietvexe` VALUES (1,1,1,NULL,NULL),(2,2,2,NULL,NULL),(3,3,1,NULL,NULL),(4,4,4,NULL,NULL);
 /*!40000 ALTER TABLE `chitietvexe` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,10 +60,12 @@ CREATE TABLE `chuyenxe` (
   `ngayDi` date DEFAULT NULL,
   `gia` float DEFAULT '3',
   `maTuyen` int NOT NULL,
+  `maXe` int DEFAULT NULL,
   PRIMARY KEY (`maChuyenXe`),
   KEY `fk_idx` (`maTuyen`),
+  KEY `fk_xe_idx` (`maXe`),
   CONSTRAINT `fk` FOREIGN KEY (`maTuyen`) REFERENCES `tuyenxe` (`maTuyen`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +74,7 @@ CREATE TABLE `chuyenxe` (
 
 LOCK TABLES `chuyenxe` WRITE;
 /*!40000 ALTER TABLE `chuyenxe` DISABLE KEYS */;
-INSERT INTO `chuyenxe` VALUES (1,'SaiGon-BinhDinh',NULL,'2022-04-20',300,1),(2,'SaiGon-KonTom',NULL,'2022-04-20',350,3),(3,'SG-BD_PhuongTrang',NULL,'2022-04-21',320,1);
+INSERT INTO `chuyenxe` VALUES (1,'SaiGon-BinhDinh',NULL,'2022-04-20',300,1,1),(2,'SaiGon-KonTom',NULL,'2022-04-20',350,3,2),(3,'SG-BD_PhuongTrang',NULL,'2022-04-21',320,1,3),(4,'SG-BD2',NULL,'2022-04-20',310,1,4);
 /*!40000 ALTER TABLE `chuyenxe` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,7 +261,7 @@ CREATE TABLE `vexe` (
   CONSTRAINT `fk_vexe_chuyenxe` FOREIGN KEY (`maChuyenXe`) REFERENCES `chuyenxe` (`maChuyenXe`),
   CONSTRAINT `fk_vexe_kh` FOREIGN KEY (`maKh`) REFERENCES `khachhang` (`maKh`),
   CONSTRAINT `fk_vexe_nv` FOREIGN KEY (`maNv`) REFERENCES `nhanvien` (`maNv`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,7 +270,7 @@ CREATE TABLE `vexe` (
 
 LOCK TABLES `vexe` WRITE;
 /*!40000 ALTER TABLE `vexe` DISABLE KEYS */;
-INSERT INTO `vexe` VALUES (1,2,1,1),(2,2,2,2);
+INSERT INTO `vexe` VALUES (1,2,1,1),(2,2,2,2),(3,2,2,1),(4,2,1,4);
 /*!40000 ALTER TABLE `vexe` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -285,7 +287,7 @@ CREATE TABLE `xe` (
   `banSo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `soGhe` int DEFAULT NULL,
   PRIMARY KEY (`maXe`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -294,7 +296,7 @@ CREATE TABLE `xe` (
 
 LOCK TABLES `xe` WRITE;
 /*!40000 ALTER TABLE `xe` DISABLE KEYS */;
-INSERT INTO `xe` VALUES (1,'Phuong Trang','59-b 12345',3),(2,'Thanh Buoi','59-c 6789',5);
+INSERT INTO `xe` VALUES (1,'Phuong Trang','59-b 12345',6),(2,'Thanh Buoi','59-c 6789',5),(3,'NamVu','77h1 6789',10),(4,'PhucLong','77h1 9876',8);
 /*!40000 ALTER TABLE `xe` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -307,4 +309,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-20 19:30:33
+-- Dump completed on 2022-04-21 13:08:58

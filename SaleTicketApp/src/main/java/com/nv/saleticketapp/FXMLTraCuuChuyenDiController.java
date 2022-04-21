@@ -17,9 +17,10 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 import java.time.LocalDate;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -60,6 +61,10 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
         loadTableView();
     }    
     
+    public void thoat(ActionEvent evt){
+    
+        System.exit(0);
+    }
     
     public void traCuuChuyenDi(ActionEvent evt) throws SQLException, ParseException{
         
@@ -69,26 +74,50 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
         DuLieuChiTietVeXe chitiet = new DuLieuChiTietVeXe();
         DuLieuXe x = new DuLieuXe();
         
+        String ngay;
+        
+        if (this.cbNoiDi.getValue() == null || this.cbNoiDen.getValue() == null){
+            Utils.getBox("Noi di va noi den khong duoc bo trong", Alert.AlertType.INFORMATION).show();
+            
+        }
+        
+        if(this.dpNgayDi.getValue() == null){
+        
+            ngay = java.time.LocalDate.now().toString(); 
+        }
+        else{
+        
+            ngay = this.dpNgayDi.getValue().toString();
+        }
+
+        
         int maTuyen = d.getMaTuyen(this.cbNoiDi.getValue().toString(), this.cbNoiDen.getValue().toString());
         
-        List<ChuyenXe> cacChuyenXe = c.timKiemChuyenXe(maTuyen, dpNgayDi.getValue().toString());
+        List<ChuyenXe> cacChuyenXe = c.timKiemChuyenXe(maTuyen, ngay);
+        
+        if(maTuyen == 0 || cacChuyenXe.size() == 0){
+        
+            for ( int i = 0; i<this.tbThongTin.getItems().size(); i++) {
+                tbThongTin.getItems().clear();
+            }
+            Utils.getBox("Hien tai chua co chuyen di cua ban", Alert.AlertType.INFORMATION).show();
+            
+        }
+        else{
         
         List<ThongTinCacChuyenXe> list = new ArrayList<>();
         
         
         for (ChuyenXe a : cacChuyenXe){
-            
 
-            int maVeXe = v.getMaVeXeDon(a.getMaChuyenXe());
-            int maXe = chitiet.getMaXe(maVeXe);
+            int soGheTrong = x.getSoLuongGhe(a.getMaXe()) - v.getMaVeXe(a.getMaChuyenXe()).size();
 
-            int soGheTrong = x.getSoLuongGhe(maXe) - v.getMaVeXe(a.getMaChuyenXe()).size();
-
-            ThongTinCacChuyenXe info = new ThongTinCacChuyenXe(a.getMaChuyenXe(), this.cbNoiDi.getValue().toString(), this.cbNoiDen.getValue().toString(), dpNgayDi.getValue().toString(), a.getGioKhoiHanh(), a.getGia(), soGheTrong);
+            ThongTinCacChuyenXe info = new ThongTinCacChuyenXe(a.getMaChuyenXe(), this.cbNoiDi.getValue().toString(), this.cbNoiDen.getValue().toString(), ngay, a.getGioKhoiHanh(), a.getGia(), soGheTrong);
             list.add(info);
         }
         
         loadTableData(list);
+        }
 
     }
     
@@ -96,25 +125,34 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
     
         TableColumn colMaChuyenXe = new TableColumn("Ma Chuyen Xe");
         colMaChuyenXe.setCellValueFactory(new PropertyValueFactory("maChuyenXe"));
-//        colMaChuyenXe.setPrefWidth(200);
+        colMaChuyenXe.setPrefWidth(170);
 
         TableColumn colNoiDi = new TableColumn("Noi di");
         colNoiDi.setCellValueFactory(new PropertyValueFactory("noiDi"));
-        
+        colNoiDi.setPrefWidth(100);
+
         TableColumn colNoiDen = new TableColumn("Noi den");
         colNoiDen.setCellValueFactory(new PropertyValueFactory("noiDen"));
-        
+        colNoiDen.setPrefWidth(100);
+
         TableColumn colNgayDi = new TableColumn("Ngay Di");
         colNgayDi.setCellValueFactory(new PropertyValueFactory("ngayDi"));
+        colNgayDi.setPrefWidth(150);
+
         
         TableColumn colGioKhoiHanh = new TableColumn("Gio di");
         colGioKhoiHanh.setCellValueFactory(new PropertyValueFactory("gioKhoiHanh"));
-        
+        colGioKhoiHanh.setPrefWidth(100);
+
         TableColumn colGia = new TableColumn("Gia tien");
         colGia.setCellValueFactory(new PropertyValueFactory("gia"));
+        colGia.setPrefWidth(110);
+
         
         TableColumn colGheTrong = new TableColumn("Con trong");
         colGheTrong.setCellValueFactory(new PropertyValueFactory("gheConTrong"));
+        colGheTrong.setPrefWidth(100);
+
         
         this.tbThongTin.getColumns().addAll(colMaChuyenXe, colNoiDi, colNoiDen, colNgayDi, colGioKhoiHanh, colGia, colGheTrong);
         

@@ -32,26 +32,8 @@ public class DuLieuXe {
     }
         return results;
     }
-<<<<<<< HEAD
-    public String getBanSo(int maXe) throws SQLException{      
-        
-        try(Connection conn = JdbcUtils.getConn()){
-            
-            PreparedStatement  stm = conn.prepareStatement("select banSo from vexe where maXe = ?;");
-            stm.setInt(1, maXe);
-            
-            ResultSet rs = stm.executeQuery();
-            while(rs.next()){
-                return rs.getString(1);
-        }
-    }
-        return null;
-    }
-    public int getSoLuongGhe(int maXe) throws SQLException{
-=======
     
      public int getSoLuongGhe(int maXe) throws SQLException{
->>>>>>> c34f80dac7e8c653868678e5b609a2fbc533f82a
     
         try(Connection conn = JdbcUtils.getConn()){
             PreparedStatement stm = conn.prepareStatement("select soGhe from xe where maXe=?");
@@ -65,11 +47,7 @@ public class DuLieuXe {
             }
 
         }
-<<<<<<< HEAD
-        return 0;}
-=======
         return 0;
         
     } 
->>>>>>> c34f80dac7e8c653868678e5b609a2fbc533f82a
 }

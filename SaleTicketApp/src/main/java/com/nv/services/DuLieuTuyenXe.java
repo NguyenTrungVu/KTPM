@@ -7,7 +7,6 @@ package com.nv.services;
 import com.nv.pojo.TuyenXe;
 import com.nv.utils.JdbcUtils;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -56,34 +55,4 @@ public class DuLieuTuyenXe {
          
          return 0;
      }
-     public String getNoiDen(int maTuyen) throws SQLException{
-         
-        
-        try(Connection conn = JdbcUtils.getConn()){
-            
-            PreparedStatement  stm = conn.prepareStatement("select noiDen from vexe where maTuyen = ?;");
-            stm.setInt(1, maTuyen);
-            
-            ResultSet rs = stm.executeQuery();
-            while(rs.next()){
-                return rs.getString(1);
-        }
-    }
-        return null;
-    }
-     public String getNoiDi(int maTuyen) throws SQLException{
-         
-        
-        try(Connection conn = JdbcUtils.getConn()){
-            
-            PreparedStatement  stm = conn.prepareStatement("select noiDi from vexe where maTuyen = ?;");
-            stm.setInt(1, maTuyen);
-            
-            ResultSet rs = stm.executeQuery();
-            while(rs.next()){
-                return rs.getString(1);
-        }
-    }
-        return null;
-    }
 }
