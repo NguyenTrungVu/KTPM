@@ -6,4 +6,5 @@ module com.nv.saleticketapp {
     
     opens com.nv.saleticketapp to javafx.fxml;
     exports com.nv.saleticketapp;
+    exports com.nv.pojo;
 }

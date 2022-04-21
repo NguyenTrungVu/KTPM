@@ -17,17 +17,19 @@ public class ChuyenXe {
     private Date ngayDi;
     private float gia;
     private int maTuyen;
+    private int maXe;
 
     public ChuyenXe() {
     }
 
-    public ChuyenXe(int maChuyenXe, String tenChuyenXe, String gioKhoiHanh, Date ngayDi, float gia, int maTuyen) {
+    public ChuyenXe(int maChuyenXe, String tenChuyenXe, String gioKhoiHanh, Date ngayDi, float gia, int maTuyen, int maXe) {
         this.maChuyenXe = maChuyenXe;
         this.tenChuyenXe = tenChuyenXe;
         this.gioKhoiHanh = gioKhoiHanh;
         this.ngayDi = ngayDi;
         this.gia = gia;
         this.maTuyen = maTuyen;
+        this.maXe = maXe;
     }
 
 //    @Override
@@ -120,5 +122,19 @@ public class ChuyenXe {
      */
     public void setMaTuyen(int maTuyen) {
         this.maTuyen = maTuyen;
+    }
+
+    /**
+     * @return the maXe
+     */
+    public int getMaXe() {
+        return maXe;
+    }
+
+    /**
+     * @param maXe the maXe to set
+     */
+    public void setMaXe(int maXe) {
+        this.maXe = maXe;
     }
 }

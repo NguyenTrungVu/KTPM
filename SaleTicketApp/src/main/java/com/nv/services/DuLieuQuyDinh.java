@@ -25,7 +25,7 @@ public class DuLieuQuyDinh {
             ResultSet rs = stm.executeQuery("select * from quydinh");
             
             while(rs.next()){
-                QuyDinh qd = new QuyDinh(rs.getInt("maQuyDinh"), rs.getInt("maKhthoiGianChamNhatDatVe"), 
+                QuyDinh qd = new QuyDinh(rs.getInt("maQuyDinh"), rs.getInt("thoiGianChamNhatDatVe"), 
                         rs.getInt("thoiGianChamNhatMuaVe"), rs.getInt("thoiGianChamNhatNhanVe"), rs.getInt("thoiGianChamDoiHuyVe"), rs.getInt("thoiGianVeThuHoi") );
                 results.add(qd);
         }

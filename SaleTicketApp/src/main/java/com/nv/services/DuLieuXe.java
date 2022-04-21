@@ -7,6 +7,7 @@ package com.nv.services;
 import com.nv.pojo.Xe;
 import com.nv.utils.JdbcUtils;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -31,4 +32,33 @@ public class DuLieuXe {
     }
         return results;
     }
+    public String getBanSo(int maXe) throws SQLException{      
+        
+        try(Connection conn = JdbcUtils.getConn()){
+            
+            PreparedStatement  stm = conn.prepareStatement("select banSo from vexe where maXe = ?;");
+            stm.setInt(1, maXe);
+            
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                return rs.getString(1);
+        }
+    }
+        return null;
+    }
+    public int getSoLuongGhe(int maXe) throws SQLException{
+    
+        try(Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("select soGhe from xe where maXe=?");
+            stm.setInt(1, maXe);
+
+            ResultSet rs = stm.executeQuery();
+            
+            while(rs.next()){
+
+                return rs.getInt(1);
+            }
+
+        }
+        return 0;}
 }

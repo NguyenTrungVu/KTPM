@@ -7,6 +7,7 @@ package com.nv.services;
 import com.nv.pojo.VeXe;
 import com.nv.utils.JdbcUtils;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -31,4 +32,62 @@ public class DuLieuVeXe {
     }
         return results;
     }
+    public List<VeXe> getMaVe(int maKh) throws SQLException{
+        List <VeXe> cacVeXe = new ArrayList<>();
+        List <VeXe> data = getVeXe();
+        for(VeXe d: data){
+            if(d.getMaChuyenXe() == maKh)
+                cacVeXe.add(d);
+        }
+        return cacVeXe;
+        
+    } 
+    public int getMaChuyenXe(int maKh) throws SQLException{
+        
+        
+        try(Connection conn = JdbcUtils.getConn()){
+            
+            PreparedStatement  stm = conn.prepareStatement("select maChuyenXe from vexe where maKh = ?;");
+            stm.setInt(1, maKh);
+            
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                return rs.getInt(1);
+        }
+    }
+        return 0;
+    }
+     public int getMaVeXeDon(int maChuyen) throws SQLException{
+    
+
+        try(Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("SELECT maVe FROM vexe where maChuyenXe=?");
+            stm.setInt(1, maChuyen);
+
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                return rs.getInt(1);
+            }
+
+        }
+        return 0;
+        
+    } 
+    
+    public List<Integer> getMaVeXe(int maChuyen) throws SQLException{
+    
+        List<Integer> cacVeXe = new ArrayList<>();
+        try(Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("SELECT maVe FROM vexe where maChuyenXe=?;");
+            stm.setInt(1, maChuyen);
+
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                cacVeXe.add(rs.getInt(1));
+            }
+
+        }
+        return cacVeXe;
+        
+    } 
 }

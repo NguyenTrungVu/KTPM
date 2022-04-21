@@ -5,8 +5,10 @@
 package com.nv.services;
 
 import com.nv.pojo.ChiTietVeXe;
+import com.nv.pojo.VeXe;
 import com.nv.utils.JdbcUtils;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,5 +32,36 @@ public class DuLieuChiTietVeXe {
         }
     }
         return results;
+    }
+    
+    
+    public int getMaXe(int maVe) throws SQLException{
+        
+        try(Connection conn = JdbcUtils.getConn()){
+            
+            PreparedStatement  stm = conn.prepareStatement("select maXe from vexe where maVe= ?;");
+            stm.setInt(1, maVe);
+            
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                return rs.getInt(1);
+        }
+    }
+        return 0;
+    }
+    public String getViTri(int maVe) throws SQLException{
+       
+        
+        try(Connection conn = JdbcUtils.getConn()){
+            
+            PreparedStatement  stm = conn.prepareStatement("select maXe from vexe where maVe= ?;");
+            stm.setInt(1, maVe);
+            
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                return rs.getString(1);
+        }
+    }
+        return null;
     }
 }
