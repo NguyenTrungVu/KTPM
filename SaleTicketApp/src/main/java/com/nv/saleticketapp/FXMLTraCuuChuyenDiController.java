@@ -31,6 +31,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Control;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -58,7 +59,7 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
         xuLiComboBoxNoiDi();
         xuLiComboBoxNoiDen();
         
-        loadTableView();
+        loadTableViewChuyenDi(tbThongTin);
     }    
     
     public void thoat(ActionEvent evt){
@@ -116,12 +117,12 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
             list.add(info);
         }
         
-        loadTableData(list);
+        loadTableData(list, this.tbThongTin);
         }
 
     }
     
-    private void loadTableView(){
+    public static void loadTableViewChuyenDi(TableView tableview){
     
         TableColumn colMaChuyenXe = new TableColumn("Ma Chuyen Xe");
         colMaChuyenXe.setCellValueFactory(new PropertyValueFactory("maChuyenXe"));
@@ -154,13 +155,13 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
         colGheTrong.setPrefWidth(100);
 
         
-        this.tbThongTin.getColumns().addAll(colMaChuyenXe, colNoiDi, colNoiDen, colNgayDi, colGioKhoiHanh, colGia, colGheTrong);
+        tableview.getColumns().addAll(colMaChuyenXe, colNoiDi, colNoiDen, colNgayDi, colGioKhoiHanh, colGia, colGheTrong);
         
     }
     
-    private void loadTableData(List<ThongTinCacChuyenXe> list){
+    public static void loadTableData(List<ThongTinCacChuyenXe> list, TableView tableview){
         
-        this.tbThongTin.setItems(FXCollections.observableList(list));
+        tableview.setItems(FXCollections.observableList(list));
     }
        
     public void xuLiComboBoxNoiDi(){

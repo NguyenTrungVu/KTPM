@@ -89,4 +89,40 @@ public class DuLieuTuyenXe {
          }
          return 0;
      }
+     
+     public String getNoiDiByMa(int maTuyen){
+     
+         List<TuyenXe> rs = new ArrayList<>();
+         try {
+             rs = getTuyenXe();
+         } catch (SQLException ex) {
+             Logger.getLogger(DuLieuTuyenXe.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         for(TuyenXe t: rs){
+         
+             if(t.getMaTuyen() == maTuyen)
+             
+                 return t.getNoiDi();
+                 
+         }
+         return null;
+     }
+     
+     public String getNoiDenByMa(int maTuyen){
+     
+         List<TuyenXe> rs = new ArrayList<>();
+         try {
+             rs = getTuyenXe();
+         } catch (SQLException ex) {
+             Logger.getLogger(DuLieuTuyenXe.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         for(TuyenXe t: rs){
+         
+             if(t.getMaTuyen()== maTuyen)
+             
+                 return t.getNoiDen();
+                 
+         }
+         return null;
+     }
 }

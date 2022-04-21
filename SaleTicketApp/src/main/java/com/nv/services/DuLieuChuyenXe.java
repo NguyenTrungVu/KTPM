@@ -7,6 +7,7 @@ package com.nv.services;
 import com.nv.pojo.ChuyenXe;
 import com.nv.utils.JdbcUtils;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,6 +15,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -51,5 +54,41 @@ public class DuLieuChuyenXe {
         return results;
         
         
+    }
+    
+    public String getTenChuyenXeByMa(int maChuyenXe) throws SQLException{
+    
+        List<ChuyenXe> data = getChuyenXe();
+        
+        for (ChuyenXe d: data){
+            if(d.getMaChuyenXe() == maChuyenXe){
+                return d.getTenChuyenXe();
+            }
+        }
+        return null;
+    }
+    
+    public int getMaTuyenByMa(int maChuyenXe) throws SQLException{
+    
+        List<ChuyenXe> data = getChuyenXe();
+        
+        for (ChuyenXe d: data){
+            if(d.getMaChuyenXe()== maChuyenXe){
+                return d.getMaTuyen();
+            }
+        }
+        return 0;
+    }
+    
+    public int getMaXeByMa(int maChuyenXe) throws SQLException{
+    
+        List<ChuyenXe> data = getChuyenXe();
+        
+        for (ChuyenXe d: data){
+            if(d.getMaChuyenXe()== maChuyenXe){
+                return d.getMaXe();
+            }
+        }
+        return 0;
     }
 }

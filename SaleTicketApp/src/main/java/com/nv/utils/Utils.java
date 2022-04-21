@@ -4,6 +4,8 @@
  */
 package com.nv.utils;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javafx.scene.control.Alert;
 
 /**
@@ -17,4 +19,10 @@ public class Utils {
         
         return a;
     }
+     
+    public static final LocalDate LOCAL_DATE (String dateString){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(dateString, formatter);
+    return localDate;
+}
 }

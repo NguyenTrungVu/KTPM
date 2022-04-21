@@ -17,7 +17,9 @@ HBox{
     /*-fx-alignment: center;*/
 }
 Label{
-    -fx-text-fill: #EDE6DB;
+   
+    -fx-text-fill: black;
+    -fx-font-size: 16;
 }
   
 /*css heading*/
@@ -40,7 +42,7 @@ Label{
 
 TextField, DatePicker{
     -fx-pref-height:25;
-    -fx-pref-width: 170;
+    -fx-pref-width: 200;
    
 }
 
