@@ -53,6 +53,7 @@ public class DuLieuChuyenXe {
         
         
     }
+<<<<<<< HEAD
     public Date getNgayDi(int maChuyenXe) throws SQLException{
         
         try(Connection conn = JdbcUtils.getConn()){
@@ -95,4 +96,6 @@ public class DuLieuChuyenXe {
         }
         return 0;
     }
+=======
+>>>>>>> c34f80dac7e8c653868678e5b609a2fbc533f82a
 }

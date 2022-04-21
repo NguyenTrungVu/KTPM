@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -32,6 +34,7 @@ public class DuLieuVeXe {
     }
         return results;
     }
+<<<<<<< HEAD
     public List<VeXe> getMaVe(int maKh) throws SQLException{
         List <VeXe> cacVeXe = new ArrayList<>();
         List <VeXe> data = getVeXe();
@@ -65,6 +68,17 @@ public class DuLieuVeXe {
             stm.setInt(1, maChuyen);
 
             ResultSet rs = stm.executeQuery();
+=======
+     
+    public int getSoLuongVeDaDat(int maChuyen) throws SQLException{
+    
+        try(Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("select count(*) from vexe where maChuyenXe=?");
+            stm.setInt(1, maChuyen);
+
+            ResultSet rs = stm.executeQuery();
+            
+>>>>>>> c34f80dac7e8c653868678e5b609a2fbc533f82a
             while(rs.next()){
                 return rs.getInt(1);
             }
@@ -90,4 +104,26 @@ public class DuLieuVeXe {
         return cacVeXe;
         
     } 
+<<<<<<< HEAD
+=======
+    
+    public int getMaVeXeDon(int maChuyen) throws SQLException{
+    
+
+        try(Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("SELECT maVe FROM vexe where maChuyenXe=?");
+            stm.setInt(1, maChuyen);
+
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                return rs.getInt(1);
+            }
+
+        }
+        return 0;
+        
+    } 
+    
+     
+>>>>>>> c34f80dac7e8c653868678e5b609a2fbc533f82a
 }
