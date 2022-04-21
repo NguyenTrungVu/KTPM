@@ -29,7 +29,7 @@ public class DuLieuChuyenXe {
             
             while(rs.next()){
             
-                ChuyenXe c = new ChuyenXe(rs.getInt("maChuyenXe"), rs.getString("tenChuyenXe"), rs.getString("gioKhoiHanh"), rs.getDate("ngayDi"), rs.getFloat("gia"), rs.getInt("maTuyen"), rs.getInt("maXe"));
+                ChuyenXe c = new ChuyenXe(rs.getInt("maChuyenXe"), rs.getString("tenChuyenXe"), rs.getString("gioKhoiHanh"), rs.getString("ngayDi"), rs.getFloat("gia"), rs.getInt("maTuyen"), rs.getInt("maXe"));
                 results.add(c);
             }
         }

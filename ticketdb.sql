@@ -57,7 +57,7 @@ CREATE TABLE `chuyenxe` (
   `maChuyenXe` int NOT NULL AUTO_INCREMENT,
   `tenChuyenXe` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `gioKhoiHanh` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ngayDi` date DEFAULT NULL,
+  `ngayDi` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `gia` float DEFAULT '3',
   `maTuyen` int NOT NULL,
   `maXe` int DEFAULT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE `chuyenxe` (
   KEY `fk_idx` (`maTuyen`),
   KEY `fk_xe_idx` (`maXe`),
   CONSTRAINT `fk` FOREIGN KEY (`maTuyen`) REFERENCES `tuyenxe` (`maTuyen`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -228,7 +228,8 @@ CREATE TABLE `tuyenxe` (
   `tenTuyen` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `noiDi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `noiDen` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`maTuyen`)
+  PRIMARY KEY (`maTuyen`),
+  UNIQUE KEY `tenTuyen_UNIQUE` (`tenTuyen`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -309,4 +310,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-21 13:08:58
+-- Dump completed on 2022-04-21 17:22:47

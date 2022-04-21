@@ -55,4 +55,38 @@ public class DuLieuTuyenXe {
          
          return 0;
      }
+     
+     public int getMaTuyenByTenTuyen(String tenTuyen){
+     
+         List<TuyenXe> rs = new ArrayList<>();
+         try {
+             rs = getTuyenXe();
+         } catch (SQLException ex) {
+             Logger.getLogger(DuLieuTuyenXe.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         for(TuyenXe t: rs){
+         
+             if(t.getTenTuyen().compareTo(tenTuyen) == 0)
+                 return t.getMaTuyen();
+         }
+         return 0;
+     }
+     
+     public int getMaTuyenByNoiDiNoiDen(String noiDi, String noiDen){
+     
+         List<TuyenXe> rs = new ArrayList<>();
+         try {
+             rs = getTuyenXe();
+         } catch (SQLException ex) {
+             Logger.getLogger(DuLieuTuyenXe.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         for(TuyenXe t: rs){
+         
+             if(t.getNoiDi().compareTo(noiDi) == 0 && t.getNoiDen().compareTo(noiDen) == 0)
+             
+                 return t.getMaTuyen();
+                 
+         }
+         return 0;
+     }
 }

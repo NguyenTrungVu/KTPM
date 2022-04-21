@@ -12,23 +12,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="670.0" styleClass="mainVBox" stylesheets="@../../../styles/tripmanage.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="670.0" styleClass="mainVBox" stylesheets="@../../../styles/tripmanage.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nv.saleticketapp.FXMLQuanLyChuyenDiController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subject" text="QUẢN LÝ CHUYẾN ĐI" wrappingWidth="368.296875" />
       <HBox prefHeight="120.0" prefWidth="650.0">
          <children>
             <VBox prefHeight="125.0" prefWidth="418.0">
                <children>
-                  <HBox prefHeight="18.0" prefWidth="600.0">
-                     <children>
-                        <Label text="Tên tuyến đi" />
-                        <ComboBox prefHeight="40.0" prefWidth="170.0" />
-                     </children>
-                  </HBox>
                   <HBox layoutX="10.0" layoutY="43.0" prefHeight="18.0" prefWidth="600.0">
                      <children>
-                        <Label text="Tên chuyến đi" />
-                        <TextField />
+                        <Label text="Tên chuyến xe" />
+                        <TextField fx:id="txtTenChuyenXe" />
                      </children>
                   </HBox>
                </children>
@@ -40,34 +34,34 @@
             </ImageView>
          </children>
       </HBox>
-      <HBox layoutX="10.0" layoutY="26.0" prefHeight="18.0" prefWidth="600.0">
+      <HBox prefHeight="18.0" prefWidth="600.0">
          <children>
             <Label text="Noi di" />
-            <TextField />
+            <ComboBox fx:id="cbNoiDi" prefHeight="40.0" prefWidth="170.0" />
             <Label styleClass="lbRight" text="Noi den" />
-            <TextField />
+            <ComboBox fx:id="cbNoiDen" prefHeight="40.0" prefWidth="170.0" />
          </children>
       </HBox>
       <HBox layoutX="10.0" layoutY="27.0" prefHeight="18.0" prefWidth="600.0">
          <children>
-            <Label text="Giờ đi" />
-            <TextField />
+            <Label text="Giờ khoi hanh" />
+            <TextField fx:id="txtGioKhoiHanh" />
             <Label styleClass="lbRight" text="Ngày đi" />
-            <DatePicker />
+            <DatePicker fx:id="dpNgayDi" />
          </children>
       </HBox>
       <HBox layoutX="10.0" layoutY="27.0" prefHeight="18.0" prefWidth="600.0">
          <children>
             <Label text="Giá tiền" />
-            <TextField />
+            <TextField fx:id="txtGia" />
             <Label styleClass="lbRight" text="Ma xe" />
-            <ComboBox prefHeight="40.0" prefWidth="172.0" />
+            <ComboBox fx:id="cbMaXe" prefHeight="40.0" prefWidth="172.0" />
          </children>
       </HBox>
       <TableView prefHeight="200.0" prefWidth="200.0" />
       <HBox prefHeight="59.0" prefWidth="645.0" styleClass="btArea">
          <children>
-            <Button graphicTextGap="0.0" mnemonicParsing="false" styleClass="btFunc" text="Thêm" />
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#themChuyenDi" styleClass="btFunc" text="Thêm" />
             <Button graphicTextGap="0.0" layoutX="163.0" layoutY="33.0" mnemonicParsing="false" styleClass="btFunc" text="Tra Cứu" />
             <Button mnemonicParsing="false" styleClass="btFunc" text="Sửa" />
             <Button mnemonicParsing="false" styleClass="btFunc" text="Xoá" />

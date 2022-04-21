@@ -14,7 +14,7 @@ public class ChuyenXe {
     private int maChuyenXe;
     private String tenChuyenXe;
     private String gioKhoiHanh;
-    private Date ngayDi;
+    private String ngayDi;
     private float gia;
     private int maTuyen;
     private int maXe;
@@ -22,7 +22,7 @@ public class ChuyenXe {
     public ChuyenXe() {
     }
 
-    public ChuyenXe(int maChuyenXe, String tenChuyenXe, String gioKhoiHanh, Date ngayDi, float gia, int maTuyen, int maXe) {
+    public ChuyenXe(int maChuyenXe, String tenChuyenXe, String gioKhoiHanh, String ngayDi, float gia, int maTuyen, int maXe) {
         this.maChuyenXe = maChuyenXe;
         this.tenChuyenXe = tenChuyenXe;
         this.gioKhoiHanh = gioKhoiHanh;
@@ -85,14 +85,14 @@ public class ChuyenXe {
     /**
      * @return the ngayDi
      */
-    public Date getNgayDi() {
+    public String getNgayDi() {
         return ngayDi;
     }
 
     /**
      * @param ngayDi the ngayDi to set
      */
-    public void setNgayDi(Date ngayDi) {
+    public void setNgayDi(String ngayDi) {
         this.ngayDi = ngayDi;
     }
 
