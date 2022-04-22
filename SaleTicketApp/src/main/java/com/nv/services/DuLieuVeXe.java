@@ -5,7 +5,9 @@
 package com.nv.services;
 
 import com.nv.pojo.VeXe;
+import com.nv.saleticketapp.FXMLQuanLyChuyenDiController;
 import com.nv.utils.JdbcUtils;
+import com.nv.utils.Utils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Alert;
 
 /**
  *
@@ -28,7 +31,7 @@ public class DuLieuVeXe {
             ResultSet rs = stm.executeQuery("select * from vexe");
             
             while(rs.next()){
-                VeXe vx = new VeXe( rs.getInt("maVe"), rs.getInt("maNv"), rs.getInt("maKh"), rs.getInt("maChuyenXe"));
+                VeXe vx = new VeXe( rs.getInt("maVe"), rs.getInt("maNv"), rs.getInt("maKh"), rs.getInt("maChuyenXe"), rs.getBoolean("trangThaiVe"));
                 results.add(vx);
         }
     }
@@ -85,6 +88,38 @@ public class DuLieuVeXe {
         return 0;
         
     } 
+    public void addVeXe(VeXe veXe){
+    
+         try {
+                    
+            Connection conn = JdbcUtils.getConn();
+            PreparedStatement stm = conn.prepareStatement("INSERT INTO vexe(maNv, maKh, maChuyenXe, trangThaiVe) VALUES(?, ?, ?, ?)");
+            stm.setInt(1, veXe.getMaNv());
+            stm.setInt(2, veXe.getMaKh());
+            stm.setInt(3, veXe.getMaChuyenXe());
+            stm.setBoolean(4, veXe.getTrangThaiVe());
+
+            stm.executeUpdate();
+            Utils.getBox("Them ve xe thanh cong", Alert.AlertType.CONFIRMATION).show();
+            } catch (SQLException ex) {
+                Logger.getLogger(FXMLQuanLyChuyenDiController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
+    public int getMaVeVuaDat() throws SQLException{
+    
+        Connection conn = JdbcUtils.getConn();
+        Statement stm = conn.createStatement();
+        ResultSet rs = stm.executeQuery("select maVe FROM ticketdb.vexe  order by maVe desc Limit 1; ");
+        
+        while(rs.next()){
+        
+            return rs.getInt(1);
+        }
+        return 0;
+    }
+
+    
     
      
 }

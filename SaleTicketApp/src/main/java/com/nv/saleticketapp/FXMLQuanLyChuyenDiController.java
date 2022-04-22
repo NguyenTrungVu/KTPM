@@ -8,7 +8,6 @@ import com.nv.pojo.ChuyenXe;
 import com.nv.pojo.ThongTinCacChuyenXe;
 import com.nv.pojo.TuyenXe;
 import com.nv.pojo.Xe;
-import static com.nv.saleticketapp.FXMLTraCuuChuyenDiController.loadTableData;
 import com.nv.services.DuLieuChiTietVeXe;
 import com.nv.services.DuLieuChuyenXe;
 import com.nv.services.DuLieuTuyenXe;
@@ -25,7 +24,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+//import java.util.Date;
+import java.sql.Date;
+
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -72,10 +73,10 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
         try {
             // TODO
             
-            xuLiComboBoxNoiDi();
-            xuLiComboBoxNoiDen();
+            Utils.xuLiComboBoxNoiDi(this.cbNoiDi);
+            Utils.xuLiComboBoxNoiDen(this.cbNoiDen);
             loadDuLieuCbMaXe();
-            FXMLTraCuuChuyenDiController.loadTableViewChuyenDi(this.tbThongTin);
+            Utils.loadTableViewChuyenDi(this.tbThongTin);
         } catch (SQLException ex) {
             Logger.getLogger(FXMLQuanLyChuyenDiController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -112,7 +113,7 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
     }    
     
     public void themChuyenDi(ActionEvent evt) throws ParseException{
-        
+
         DuLieuTuyenXe t = new DuLieuTuyenXe();
         if(this.cbNoiDi.getValue() == null || this.cbNoiDen.getValue() == null){
         
@@ -122,15 +123,19 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
             int maTuyen = t.getMaTuyenByNoiDiNoiDen(this.cbNoiDi.getValue().toString(), this.cbNoiDen.getValue().toString());
         
         
-            String ngay;
+            Date ngay = null;
+            String temp;
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             if(this.dpNgayDi.getValue() == null){
-
-                ngay = java.time.LocalDate.now().toString(); 
                 
+                LocalDate currentDate = LocalDate.now();
+                ngay = Date.valueOf(currentDate.toString());
+
             }
             else{
 
-                ngay = this.dpNgayDi.getValue().toString();
+                temp = this.dpNgayDi.getValue().toString();
+                ngay = Date.valueOf(temp);
             }
 
             if(this.txtTenChuyenXe.getText().compareTo("") == 0 || this.txtGioKhoiHanh.getText().compareTo("") == 0 ||
@@ -152,7 +157,7 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
                     PreparedStatement stm = conn.prepareStatement("INSERT INTO chuyenxe(tenChuyenXe, gioKhoiHanh, ngayDi, gia, maTuyen, maXe) VALUES(?, ?, ?, ?, ?, ?)");
                     stm.setString(1, c.getTenChuyenXe());
                     stm.setString(2, c.getGioKhoiHanh());
-                    stm.setString(3, c.getNgayDi());
+                    stm.setDate(3, (Date) c.getNgayDi());
                     stm.setFloat(4, c.getGia());
                     stm.setInt(5, c.getMaTuyen());
                     stm.setInt(6, c.getMaXe());
@@ -186,57 +191,8 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
             
         btnSua.setDisable(true);
         btnXoa.setDisable(true);
-
-        DuLieuTuyenXe d = new DuLieuTuyenXe();
-        DuLieuVeXe v = new DuLieuVeXe();
-        DuLieuChuyenXe c = new DuLieuChuyenXe();
-        DuLieuChiTietVeXe chitiet = new DuLieuChiTietVeXe();
-        DuLieuXe x = new DuLieuXe();
+        Utils.traCuuChuyenDi(this.cbNoiDi, this.cbNoiDen, this.dpNgayDi, this.tbThongTin);
         
-        String ngay;
-        
-        if (this.cbNoiDi.getValue() == null || this.cbNoiDen.getValue() == null){
-            Utils.getBox("Noi di va noi den khong duoc bo trong", Alert.AlertType.INFORMATION).show();
-            
-        }
-        
-        if(this.dpNgayDi.getValue() == null){
-        
-            ngay = java.time.LocalDate.now().toString(); 
-        }
-        else{
-        
-            ngay = this.dpNgayDi.getValue().toString();
-        }
-
-        
-        int maTuyen = d.getMaTuyen(this.cbNoiDi.getValue().toString(), this.cbNoiDen.getValue().toString());
-        
-        List<ChuyenXe> cacChuyenXe = c.timKiemChuyenXe(maTuyen, ngay);
-        
-        if(maTuyen == 0 || cacChuyenXe.size() == 0){
-        
-            for ( int i = 0; i<this.tbThongTin.getItems().size(); i++) {
-                tbThongTin.getItems().clear();
-            }
-            Utils.getBox("Hien tai chua co chuyen di cua ban", Alert.AlertType.INFORMATION).show();
-            
-        }
-        else{
-        
-        List<ThongTinCacChuyenXe> list = new ArrayList<>();
-        
-        
-        for (ChuyenXe a : cacChuyenXe){
-
-            int soGheTrong = x.getSoLuongGhe(a.getMaXe()) - v.getMaVeXe(a.getMaChuyenXe()).size();
-
-            ThongTinCacChuyenXe info = new ThongTinCacChuyenXe(a.getMaChuyenXe(), this.cbNoiDi.getValue().toString(), this.cbNoiDen.getValue().toString(), ngay, a.getGioKhoiHanh(), a.getGia(), soGheTrong);
-            list.add(info);
-        }
-        
-        loadTableData(list, this.tbThongTin);
-        }
         
     }
     
@@ -291,10 +247,6 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(DuLieuChuyenXe.class.getName()).log(Level.SEVERE, null, ex);
         }
-         
-
-        
-
 
     
     }
@@ -310,74 +262,7 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
         
         this.cbMaXe.setItems(FXCollections.observableList(list));
     }
-    
-     public void xuLiComboBoxNoiDi(){
-    
-        DuLieuTuyenXe d = new DuLieuTuyenXe();
-        
-        List<String> name = new ArrayList<>();
-        
-        try {
-            for(int i = 0; i < d.getTuyenXe().size(); i++){
-                
-                name.add(d.getTuyenXe().get(i).getNoiDi());
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(FXMLTraCuuChuyenDiController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        List<String> list = new ArrayList<>();
-        
-        list = xoaPhanTuTrung(name);
-                
-        this.cbNoiDi.setItems(FXCollections.observableList(list));
-        
-    }
-    
-     public void xuLiComboBoxNoiDen(){
-    
-        DuLieuTuyenXe d = new DuLieuTuyenXe();
-        
-        List<String> name = new ArrayList<>();
-        
-        try {
-            for(int i = 0; i < d.getTuyenXe().size(); i++){
-                
-                name.add(d.getTuyenXe().get(i).getNoiDen());
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(FXMLTraCuuChuyenDiController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        List<String> list = new ArrayList<>();
-        
-        list = xoaPhanTuTrung(name);
-                
-        this.cbNoiDen.setItems(FXCollections.observableList(list));
-        
-    }
-    
-    
-    
-    public List<String> xoaPhanTuTrung(List<String> list){
-    
-         // tạo 1 ArrayList arrTemp
-        ArrayList<String> arrTemp = new ArrayList<>();
+  
 
-        // thêm các phần tử của arrListNumber vào arrTemp
-        // nếu trong arrTemp đã tồn tại phần tử giống trong arrListNumber
-        // thì không thêm vào, ngược lại thêm bình thường
-        for (int i = 0; i < list.size(); i++) {
-            if (!arrTemp.contains(list.get(i))) {
-                arrTemp.add(list.get(i));
-            }
-        }
-
-        list.clear();
-
-        list.addAll(arrTemp);
-        
-        return list;
-    }
     
 }

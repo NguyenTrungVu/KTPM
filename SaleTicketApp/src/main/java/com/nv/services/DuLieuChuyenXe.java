@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,7 +33,7 @@ public class DuLieuChuyenXe {
             
             while(rs.next()){
             
-                ChuyenXe c = new ChuyenXe(rs.getInt("maChuyenXe"), rs.getString("tenChuyenXe"), rs.getString("gioKhoiHanh"), rs.getString("ngayDi"), rs.getFloat("gia"), rs.getInt("maTuyen"), rs.getInt("maXe"));
+                ChuyenXe c = new ChuyenXe(rs.getInt("maChuyenXe"), rs.getString("tenChuyenXe"), rs.getString("gioKhoiHanh"), rs.getDate("ngayDi"), rs.getFloat("gia"), rs.getInt("maTuyen"), rs.getInt("maXe"));
                 results.add(c);
             }
         }
@@ -90,5 +91,20 @@ public class DuLieuChuyenXe {
             }
         }
         return 0;
+    }
+    
+    public Date getNgayKhoiHanhByMa(int maChuyenXe) throws SQLException{
+    
+
+        try (Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("select ngayDi from chuyenxe where maChuyenXe = ?");
+            stm.setInt(1, maChuyenXe);
+            ResultSet rs = stm.executeQuery();
+            
+            while(rs.next()){
+                return rs.getTimestamp(1);
+            }
+        }
+        return new Date(0);
     }
 }

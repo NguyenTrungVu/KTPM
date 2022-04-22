@@ -56,10 +56,10 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-        xuLiComboBoxNoiDi();
-        xuLiComboBoxNoiDen();
+        Utils.xuLiComboBoxNoiDi(this.cbNoiDi);
+        Utils.xuLiComboBoxNoiDen(this.cbNoiDen);
         
-        loadTableViewChuyenDi(tbThongTin);
+        Utils.loadTableViewChuyenDi(tbThongTin);
     }    
     
     public void thoat(ActionEvent evt){
@@ -69,168 +69,10 @@ public class FXMLTraCuuChuyenDiController implements Initializable {
     
     public void traCuuChuyenDi(ActionEvent evt) throws SQLException, ParseException{
         
-        DuLieuTuyenXe d = new DuLieuTuyenXe();
-        DuLieuVeXe v = new DuLieuVeXe();
-        DuLieuChuyenXe c = new DuLieuChuyenXe();
-        DuLieuChiTietVeXe chitiet = new DuLieuChiTietVeXe();
-        DuLieuXe x = new DuLieuXe();
-        
-        String ngay;
-        
-        if (this.cbNoiDi.getValue() == null || this.cbNoiDen.getValue() == null){
-            Utils.getBox("Noi di va noi den khong duoc bo trong", Alert.AlertType.INFORMATION).show();
-            
-        }
-        
-        if(this.dpNgayDi.getValue() == null){
-        
-            ngay = java.time.LocalDate.now().toString(); 
-        }
-        else{
-        
-            ngay = this.dpNgayDi.getValue().toString();
-        }
-
-        
-        int maTuyen = d.getMaTuyen(this.cbNoiDi.getValue().toString(), this.cbNoiDen.getValue().toString());
-        
-        List<ChuyenXe> cacChuyenXe = c.timKiemChuyenXe(maTuyen, ngay);
-        
-        if(maTuyen == 0 || cacChuyenXe.size() == 0){
-        
-            for ( int i = 0; i<this.tbThongTin.getItems().size(); i++) {
-                tbThongTin.getItems().clear();
-            }
-            Utils.getBox("Hien tai chua co chuyen di cua ban", Alert.AlertType.INFORMATION).show();
-            
-        }
-        else{
-        
-        List<ThongTinCacChuyenXe> list = new ArrayList<>();
-        
-        
-        for (ChuyenXe a : cacChuyenXe){
-
-            int soGheTrong = x.getSoLuongGhe(a.getMaXe()) - v.getMaVeXe(a.getMaChuyenXe()).size();
-
-            ThongTinCacChuyenXe info = new ThongTinCacChuyenXe(a.getMaChuyenXe(), this.cbNoiDi.getValue().toString(), this.cbNoiDen.getValue().toString(), ngay, a.getGioKhoiHanh(), a.getGia(), soGheTrong);
-            list.add(info);
-        }
-        
-        loadTableData(list, this.tbThongTin);
-        }
+         Utils.traCuuChuyenDi(this.cbNoiDi, this.cbNoiDen, this.dpNgayDi, this.tbThongTin);
 
     }
     
-    public static void loadTableViewChuyenDi(TableView tableview){
     
-        TableColumn colMaChuyenXe = new TableColumn("Ma Chuyen Xe");
-        colMaChuyenXe.setCellValueFactory(new PropertyValueFactory("maChuyenXe"));
-        colMaChuyenXe.setPrefWidth(170);
-
-        TableColumn colNoiDi = new TableColumn("Noi di");
-        colNoiDi.setCellValueFactory(new PropertyValueFactory("noiDi"));
-        colNoiDi.setPrefWidth(100);
-
-        TableColumn colNoiDen = new TableColumn("Noi den");
-        colNoiDen.setCellValueFactory(new PropertyValueFactory("noiDen"));
-        colNoiDen.setPrefWidth(100);
-
-        TableColumn colNgayDi = new TableColumn("Ngay Di");
-        colNgayDi.setCellValueFactory(new PropertyValueFactory("ngayDi"));
-        colNgayDi.setPrefWidth(150);
-
-        
-        TableColumn colGioKhoiHanh = new TableColumn("Gio di");
-        colGioKhoiHanh.setCellValueFactory(new PropertyValueFactory("gioKhoiHanh"));
-        colGioKhoiHanh.setPrefWidth(100);
-
-        TableColumn colGia = new TableColumn("Gia tien");
-        colGia.setCellValueFactory(new PropertyValueFactory("gia"));
-        colGia.setPrefWidth(110);
-
-        
-        TableColumn colGheTrong = new TableColumn("Con trong");
-        colGheTrong.setCellValueFactory(new PropertyValueFactory("gheConTrong"));
-        colGheTrong.setPrefWidth(100);
-
-        
-        tableview.getColumns().addAll(colMaChuyenXe, colNoiDi, colNoiDen, colNgayDi, colGioKhoiHanh, colGia, colGheTrong);
-        
-    }
-    
-    public static void loadTableData(List<ThongTinCacChuyenXe> list, TableView tableview){
-        
-        tableview.setItems(FXCollections.observableList(list));
-    }
-       
-    public void xuLiComboBoxNoiDi(){
-    
-        DuLieuTuyenXe d = new DuLieuTuyenXe();
-        
-        List<String> name = new ArrayList<>();
-        
-        try {
-            for(int i = 0; i < d.getTuyenXe().size(); i++){
-                
-                name.add(d.getTuyenXe().get(i).getNoiDi());
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(FXMLTraCuuChuyenDiController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        List<String> list = new ArrayList<>();
-        
-        list = xoaPhanTuTrung(name);
-                
-        this.cbNoiDi.setItems(FXCollections.observableList(list));
-        
-    }
-    
-     public void xuLiComboBoxNoiDen(){
-    
-        DuLieuTuyenXe d = new DuLieuTuyenXe();
-        
-        List<String> name = new ArrayList<>();
-        
-        try {
-            for(int i = 0; i < d.getTuyenXe().size(); i++){
-                
-                name.add(d.getTuyenXe().get(i).getNoiDen());
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(FXMLTraCuuChuyenDiController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        List<String> list = new ArrayList<>();
-        
-        list = xoaPhanTuTrung(name);
-                
-        this.cbNoiDen.setItems(FXCollections.observableList(list));
-        
-    }
-    
-    
-    
-    public List<String> xoaPhanTuTrung(List<String> list){
-    
-         // tạo 1 ArrayList arrTemp
-        ArrayList<String> arrTemp = new ArrayList<>();
-
-        // thêm các phần tử của arrListNumber vào arrTemp
-        // nếu trong arrTemp đã tồn tại phần tử giống trong arrListNumber
-        // thì không thêm vào, ngược lại thêm bình thường
-        for (int i = 0; i < list.size(); i++) {
-            if (!arrTemp.contains(list.get(i))) {
-                arrTemp.add(list.get(i));
-            }
-        }
-
-        list.clear();
-
-        list.addAll(arrTemp);
-        
-        return list;
-    }
     
 }

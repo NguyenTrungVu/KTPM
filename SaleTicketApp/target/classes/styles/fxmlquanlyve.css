@@ -11,8 +11,8 @@ VBox {
 }
 Label{
     -fx-pref-width: 120px;
-    -fx-pref-height: 25px;
-    -fx-text-fill: #EDE6DB;
+    -fx-pref-height: 50px;
+    -fx-text-fill: black;
     -fx-font-size: 16;
 
 
@@ -31,6 +31,10 @@ Text.Title{
     -fx-stroke: #826F66;
 
 }
+ComboBox{
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+}
 Button{
     -fx-margin: 0 20px 0 20px;
     -fx-font-size: 16;
@@ -39,7 +43,10 @@ Button{
 }
 TextField{
     -fx-pref-width: 150px;
-    -fx-pref-height: 25px;
+    -fx-pref-height: 50px;
+}
+TextField.ngayIn{
+    -fx-pref-width: 440px;
 }
 
 .mainFxmlClass {

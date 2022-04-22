@@ -13,12 +13,12 @@ public class ChiTietVeXe {
     private int maVe;
     private int maXe;
     private String ghiChu;
-    private String viTriGhe;
+    private int viTriGhe;
 
     public ChiTietVeXe() {
     }
 
-    public ChiTietVeXe(int maChiTietVe, int maVe, int maXe, String ghiChu, String viTriGhe) {
+    public ChiTietVeXe(int maChiTietVe, int maVe, int maXe, String ghiChu, int viTriGhe) {
         this.maChiTietVe = maChiTietVe;
         this.maVe = maVe;
         this.maXe = maXe;
@@ -88,14 +88,14 @@ public class ChiTietVeXe {
     /**
      * @return the viTriGhe
      */
-    public String getViTriGhe() {
+    public int getViTriGhe() {
         return viTriGhe;
     }
 
     /**
      * @param viTriGhe the viTriGhe to set
      */
-    public void setViTriGhe(String viTriGhe) {
+    public void setViTriGhe(int viTriGhe) {
         this.viTriGhe = viTriGhe;
     }
 }

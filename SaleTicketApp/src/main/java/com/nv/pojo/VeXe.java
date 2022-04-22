@@ -13,15 +13,17 @@ public class VeXe {
     private int maNv;
     private int maKh;
     private int maChuyenXe;
+    private boolean trangThaiVe;
 
     public VeXe() {
     }
 
-    public VeXe(int maVe, int maNv, int maKh, int maChuyenXe) {
+    public VeXe(int maVe, int maNv, int maKh, int maChuyenXe, boolean trangThaiVe) {
         this.maVe = maVe;
         this.maNv = maNv;
         this.maKh = maKh;
         this.maChuyenXe = maChuyenXe;
+        this.trangThaiVe = trangThaiVe;
     }
 
     
@@ -79,5 +81,19 @@ public class VeXe {
      */
     public void setMaChuyenXe(int maChuyenXe) {
         this.maChuyenXe = maChuyenXe;
+    }
+
+    /**
+     * @return the trangThaiVe
+     */
+    public boolean getTrangThaiVe() {
+        return trangThaiVe;
+    }
+
+    /**
+     * @param trangThaiVe the trangThaiVe to set
+     */
+    public void setTrangThaiVe(boolean trangThaiVe) {
+        this.trangThaiVe = trangThaiVe;
     }
 }

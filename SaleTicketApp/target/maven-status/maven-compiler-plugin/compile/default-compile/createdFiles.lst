@@ -17,7 +17,6 @@ com\nv\services\DuLieuNhanVien.class
 com\nv\services\DuLieuChiTietVeXe.class
 com\nv\services\DuLieuKhachHang.class
 com\nv\pojo\VeXe.class
-com\nv\saleticketapp\FXMLDatBanVeController.class
 com\nv\saleticketapp\FXMLQuanLyChuyenDiController.class
 com\nv\pojo\KhachHang.class
 com\nv\saleticketapp\App.class
