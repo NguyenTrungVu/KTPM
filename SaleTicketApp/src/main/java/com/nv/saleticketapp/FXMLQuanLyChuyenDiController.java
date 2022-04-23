@@ -115,6 +115,7 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
     public void themChuyenDi(ActionEvent evt) throws ParseException{
 
         DuLieuTuyenXe t = new DuLieuTuyenXe();
+        DuLieuChuyenXe chuyen = new DuLieuChuyenXe();
         if(this.cbNoiDi.getValue() == null || this.cbNoiDen.getValue() == null){
         
             Utils.getBox("Ban can dien day du thong tin", Alert.AlertType.INFORMATION).show();
@@ -152,18 +153,24 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
                     try {
                     ChuyenXe c = new ChuyenXe(0, this.txtTenChuyenXe.getText(), this.txtGioKhoiHanh.getText(),
                         ngay, Float.parseFloat(txtGia.getText()), maTuyen, cbMaXe.getValue());
-
-                    Connection conn = JdbcUtils.getConn();
-                    PreparedStatement stm = conn.prepareStatement("INSERT INTO chuyenxe(tenChuyenXe, gioKhoiHanh, ngayDi, gia, maTuyen, maXe) VALUES(?, ?, ?, ?, ?, ?)");
-                    stm.setString(1, c.getTenChuyenXe());
-                    stm.setString(2, c.getGioKhoiHanh());
-                    stm.setDate(3, (Date) c.getNgayDi());
-                    stm.setFloat(4, c.getGia());
-                    stm.setInt(5, c.getMaTuyen());
-                    stm.setInt(6, c.getMaXe());
-
-                    stm.executeUpdate();
+                    
+                    chuyen.addChuyenXe(c);
                     Utils.getBox("Them thanh cong", Alert.AlertType.CONFIRMATION).show();
+
+                    
+//                      ChuyenXe c = new ChuyenXe(0, this.txtTenChuyenXe.getText(), this.txtGioKhoiHanh.getText(),
+//                        ngay, Float.parseFloat(txtGia.getText()), maTuyen, cbMaXe.getValue());
+//                    Connection conn = JdbcUtils.getConn();
+//                    PreparedStatement stm = conn.prepareStatement("INSERT INTO chuyenxe(tenChuyenXe, gioKhoiHanh, ngayDi, gia, maTuyen, maXe) VALUES(?, ?, ?, ?, ?, ?)");
+//                    stm.setString(1, c.getTenChuyenXe());
+//                    stm.setString(2, c.getGioKhoiHanh());
+//                    stm.setDate(3, (Date) c.getNgayDi());
+//                    stm.setFloat(4, c.getGia());
+//                    stm.setInt(5, c.getMaTuyen());
+//                    stm.setInt(6, c.getMaXe());
+//
+//                    stm.executeUpdate();
+//                    Utils.getBox("Them thanh cong", Alert.AlertType.CONFIRMATION).show();
                     } catch (SQLException ex) {
                         Logger.getLogger(FXMLQuanLyChuyenDiController.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -198,16 +205,21 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
     
     public void xoaChuyenXe(ActionEvent evt){
     
+        DuLieuChuyenXe c = new DuLieuChuyenXe();
         ThongTinCacChuyenXe selected = this.tbThongTin.getSelectionModel().getSelectedItem();
         
         
         
         try {
-            Connection conn = JdbcUtils.getConn();
-            PreparedStatement stm = conn.prepareStatement("DELETE FROM chuyenxe WHERE maChuyenXe = ?");
-            stm.setInt(1, selected.getMaChuyenXe());
-            stm.executeUpdate();
             
+            c.xoaChuyenXe(selected.getMaChuyenXe());
+            
+            
+//            Connection conn = JdbcUtils.getConn();
+//            PreparedStatement stm = conn.prepareStatement("DELETE FROM chuyenxe WHERE maChuyenXe = ?");
+//            stm.setInt(1, selected.getMaChuyenXe());
+//            stm.executeUpdate();
+//            
             Utils.getBox("Xoa thanh cong", Alert.AlertType.INFORMATION).show();
             this.tbThongTin.getItems().remove(selected);
         } catch (SQLException ex) {
@@ -216,25 +228,34 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
     }
     
     public void suaChuyenXe(ActionEvent evt){
-
+        
+        DuLieuChuyenXe chuyen = new DuLieuChuyenXe();
         DuLieuTuyenXe t = new DuLieuTuyenXe();
         ThongTinCacChuyenXe selected = this.tbThongTin.getSelectionModel().getSelectedItem();
          try {
-            Connection conn = JdbcUtils.getConn();
-            PreparedStatement stm = conn.prepareStatement("UPDATE chuyenxe set tenChuyenXe = ?, gioKhoiHanh = ?, ngayDi = ?, gia = ?, maTuyen = ?, maXe = ? where maChuyenXe=?");
-
-            stm.setString(1, this.txtTenChuyenXe.getText());
-            stm.setString(2, this.txtGioKhoiHanh.getText());
-            stm.setString(3, this.dpNgayDi.getValue().toString());
-            stm.setFloat(4, Float.parseFloat(this.txtGia.getText()));
-            stm.setInt(5, t.getMaTuyenByNoiDiNoiDen(this.cbNoiDi.getValue(), this.cbNoiDen.getValue()));
-            stm.setInt(6, this.cbMaXe.getValue());
-            stm.setInt(7, selected.getMaChuyenXe());
-            stm.executeUpdate();
+             
+             
+             
+             ChuyenXe x = new ChuyenXe(selected.getMaChuyenXe(), this.txtTenChuyenXe.getText(), this.txtGioKhoiHanh.getText(), Date.valueOf(this.dpNgayDi.getValue()), Float.parseFloat(this.txtGia.getText()),
+                     t.getMaTuyenByNoiDiNoiDen(this.cbNoiDi.getValue(), this.cbNoiDen.getValue()), this.cbMaXe.getValue());
+             
+             chuyen.suaChuyenXe(x);
+             
+//            Connection conn = JdbcUtils.getConn();
+//            PreparedStatement stm = conn.prepareStatement("UPDATE chuyenxe set tenChuyenXe = ?, gioKhoiHanh = ?, ngayDi = ?, gia = ?, maTuyen = ?, maXe = ? where maChuyenXe=?");
+//
+//            stm.setString(1, this.txtTenChuyenXe.getText());
+//            stm.setString(2, this.txtGioKhoiHanh.getText());
+//            stm.setString(3, this.dpNgayDi.getValue().toString());
+//            stm.setFloat(4, Float.parseFloat(this.txtGia.getText()));
+//            stm.setInt(5, t.getMaTuyenByNoiDiNoiDen(this.cbNoiDi.getValue(), this.cbNoiDen.getValue()));
+//            stm.setInt(6, this.cbMaXe.getValue());
+//            stm.setInt(7, selected.getMaChuyenXe());
+//            stm.executeUpdate();
             
             Utils.getBox("Cap nhat thanh cong", Alert.AlertType.INFORMATION).show();
             
-             traCuuChuyenDi(evt);
+            traCuuChuyenDi(evt);
             
             this.cbMaXe.setValue(null);
             this.dpNgayDi.setValue(null);

@@ -5,11 +5,13 @@
 package com.nv.saleticketapp;
 
 import com.nv.pojo.ChiTietVeXe;
+import com.nv.pojo.QuyDinh;
 import com.nv.pojo.ThongTinCacChuyenXe;
 import com.nv.pojo.VeXe;
 import com.nv.services.DuLieuChiTietVeXe;
 import com.nv.services.DuLieuChuyenXe;
 import com.nv.services.DuLieuKhachHang;
+import com.nv.services.DuLieuQuyDinh;
 import com.nv.services.DuLieuVeXe;
 import com.nv.services.DuLieuXe;
 import com.nv.utils.Utils;
@@ -62,8 +64,8 @@ public class FXMLDatBanVeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-//        btnBanVe.setDisable(true);
-//        btnDatVe.setDisable(true);
+        btnBanVe.setDisable(true);
+        btnDatVe.setDisable(true);
         Utils.xuLiComboBoxNoiDi(this.cbNoiDi);
         Utils.xuLiComboBoxNoiDen(this.cbNoiDen);
         Utils.loadTableViewChuyenDi(this.tbThongTin);
@@ -103,16 +105,16 @@ public class FXMLDatBanVeController implements Initializable {
     }    
     
     public void traCuuChuyenDi(ActionEvent evt) throws SQLException{
-//        btnBanVe.setDisable(true);
-//        btnDatVe.setDisable(true);
+        btnBanVe.setDisable(true);
+        btnDatVe.setDisable(true);
 
-        System.out.println(java.time.LocalTime.now().toString());
 
         Utils.traCuuChuyenDi(this.cbNoiDi, this.cbNoiDen, this.dpNgayDi, this.tbThongTin);
         
     }
     
     public void banVe(ActionEvent evt) throws SQLException, ParseException{
+        DuLieuQuyDinh q = new DuLieuQuyDinh();
         
         ThongTinCacChuyenXe selected = this.tbThongTin.getSelectionModel().getSelectedItem();
         
@@ -182,7 +184,7 @@ public class FXMLDatBanVeController implements Initializable {
             }
             
         }
-        else if(ngayDi.compareTo(ngayHienTai) == 0 && Utils.soSanhGio(gioHienTai, gioKhoiHanh) >= 5){
+        else if(ngayDi.compareTo(ngayHienTai) == 0 && Utils.soSanhGio(gioHienTai, gioKhoiHanh) >= q.getThoiChamNhatMuaVe()){
         
             if (this.txtHoTen.getText().compareTo("") == 0 || this.txtSoDienThoai.getText().compareTo("") == 0
                 || this.cbViTri.getValue().toString().compareTo("") == 0
@@ -251,6 +253,8 @@ public class FXMLDatBanVeController implements Initializable {
     }
     
     public void datVe(ActionEvent evt) throws SQLException, ParseException{
+        
+        DuLieuQuyDinh q =new DuLieuQuyDinh();
        
         ThongTinCacChuyenXe selected = this.tbThongTin.getSelectionModel().getSelectedItem();
         
@@ -320,7 +324,7 @@ public class FXMLDatBanVeController implements Initializable {
             }
             
         }
-        else if(ngayDi.compareTo(ngayHienTai) == 0 && Utils.soSanhGio(gioHienTai, gioKhoiHanh) >= 60){
+        else if(ngayDi.compareTo(ngayHienTai) == 0 && Utils.soSanhGio(gioHienTai, gioKhoiHanh) >= q.getThoiGianChamNhatDatVe()){
         
             if (this.txtHoTen.getText().compareTo("") == 0 || this.txtSoDienThoai.getText().compareTo("") == 0
                 || this.cbViTri.getValue().toString().compareTo("") == 0

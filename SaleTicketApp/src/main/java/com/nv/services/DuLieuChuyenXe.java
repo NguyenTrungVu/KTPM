@@ -5,7 +5,9 @@
 package com.nv.services;
 
 import com.nv.pojo.ChuyenXe;
+import com.nv.saleticketapp.FXMLQuanLyChuyenDiController;
 import com.nv.utils.JdbcUtils;
+import com.nv.utils.Utils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Alert;
 
 /**
  *
@@ -54,6 +57,50 @@ public class DuLieuChuyenXe {
         }
         return results;
         
+        
+    }
+    
+    
+    public void addChuyenXe(ChuyenXe c) throws SQLException{
+    
+            
+        Connection conn = JdbcUtils.getConn();
+        PreparedStatement stm = conn.prepareStatement("INSERT INTO chuyenxe(tenChuyenXe, gioKhoiHanh, ngayDi, gia, maTuyen, maXe) VALUES(?, ?, ?, ?, ?, ?)");
+        stm.setString(1, c.getTenChuyenXe());
+        stm.setString(2, c.getGioKhoiHanh());
+        stm.setDate(3, (java.sql.Date) c.getNgayDi());
+        stm.setFloat(4, c.getGia());
+        stm.setInt(5, c.getMaTuyen());
+        stm.setInt(6, c.getMaXe());
+
+        stm.executeUpdate();
+                    
+                
+
+    }
+    
+    
+    public void suaChuyenXe(ChuyenXe c) throws SQLException{
+        Connection conn = JdbcUtils.getConn();
+            PreparedStatement stm = conn.prepareStatement("UPDATE chuyenxe set tenChuyenXe = ?, gioKhoiHanh = ?, ngayDi = ?, gia = ?, maTuyen = ?, maXe = ? where maChuyenXe=?");
+
+            stm.setString(1, c.getTenChuyenXe());
+            stm.setString(2, c.getGioKhoiHanh());
+            stm.setString(3, c.getNgayDi().toString());
+            stm.setFloat(4, c.getGia());
+            stm.setInt(5, c.getMaTuyen());
+            stm.setInt(6, c.getMaXe());
+            stm.setInt(7, c.getMaChuyenXe());
+            stm.executeUpdate();
+        
+    }
+    
+    public void xoaChuyenXe(int maChuyen) throws SQLException{
+    Connection conn = JdbcUtils.getConn();
+            PreparedStatement stm = conn.prepareStatement("DELETE FROM chuyenxe WHERE maChuyenXe = ?");
+            stm.setInt(1, maChuyen);
+            stm.executeUpdate();
+            
         
     }
     

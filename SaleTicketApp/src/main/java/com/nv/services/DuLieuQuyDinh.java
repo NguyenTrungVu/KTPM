@@ -26,10 +26,39 @@ public class DuLieuQuyDinh {
             
             while(rs.next()){
                 QuyDinh qd = new QuyDinh(rs.getInt("maQuyDinh"), rs.getInt("thoiGianChamNhatDatVe"), 
-                        rs.getInt("thoiGianChamNhatMuaVe"), rs.getInt("thoiGianChamNhatNhanVe"), rs.getInt("thoiGianChamDoiHuyVe"), rs.getInt("thoiGianVeThuHoi") );
+                        rs.getInt("thoiGianChamNhatMuaVe"), rs.getInt("thoiGianChamNhatNhanVe"), rs.getInt("thoiGianChamNhatDoiHuyVe"), rs.getInt("thoiGianVeThuHoi") );
                 results.add(qd);
         }
     }
         return results;
     }
+    
+    public int getThoiGianChamNhatDatVe() throws SQLException{
+    
+        List<QuyDinh> q = getQuyDinh();
+        for(QuyDinh x : q)
+            return x.getThoiGianChamNhatDatVe();
+        return 0;
+    }
+    
+    public int getThoiChamNhatMuaVe() throws SQLException{
+    
+        List<QuyDinh> q = getQuyDinh();
+        for(QuyDinh x : q)
+            return x.getThoiGianChamNhatMuaVe();
+        return 0;
+    }
+    
+    public int getThoiGianChamNhatDoiHuyVe() throws SQLException{
+    
+        List<QuyDinh> q = getQuyDinh();
+        for(QuyDinh x : q)
+            return x.getThoiGianChamDoiHuyVe();
+        return 0;
+    }
+    
+    
+    
+    
+    
 }
