@@ -19,10 +19,11 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         
 //        scene = new Scene(loadFXML("FXMLDatBanVe"));
-        scene = new Scene(loadFXML("FXMLDoiHuyVe"));
-
+//        scene = new Scene(loadFXML("FXMLDoiHuyVe"));
 //        scene = new Scene(loadFXML("FXMLQuanLyChuyenDi"));
-//        scene = new Scene(loadFXML("FXMLTraCuuChuyenDi"));
+        scene = new Scene(loadFXML("FXMLMain"));
+
+
 
         stage.setScene(scene);
         stage.show();

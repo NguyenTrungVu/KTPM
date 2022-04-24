@@ -21,6 +21,4 @@ com\nv\pojo\KhachHang.class
 com\nv\saleticketapp\App.class
 com\nv\pojo\QuyDinh.class
 com\nv\pojo\LoaiNhanVien.class
-com\nv\saleticketapp\PrimaryController.class
 com\nv\services\DuLieuChuyenXe.class
-com\nv\saleticketapp\SecondaryController.class

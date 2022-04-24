@@ -52,6 +52,7 @@ public class FXMLDoiHuyVeController implements Initializable {
     @FXML private Button btnDoiVe;
     @FXML private Button btnHuyVe;
     @FXML private ComboBox<Integer> cbMaChuyen;
+    @FXML private Button btnNhanVe;
  
     /**
      * Initializes the controller class.
@@ -61,6 +62,10 @@ public class FXMLDoiHuyVeController implements Initializable {
         // TODO
         this.btnDoiVe.setDisable(true);
         this.btnHuyVe.setDisable(true);
+        this.btnNhanVe.setDisable(true);
+        this.cbMaChuyen.setDisable(true);
+        this.cbViTri.setDisable(true);
+        
         this.txtNgayIn.setText(java.time.LocalDate.now() + " " + java.time.LocalTime.now());
         Utils.loadTableViewVeXe(tbThongTin);
         DuLieuChuyenXe c = new DuLieuChuyenXe();
@@ -79,7 +84,10 @@ public class FXMLDoiHuyVeController implements Initializable {
                     try {
                         btnDoiVe.setDisable(false);
                         btnHuyVe.setDisable(false);
-                        
+                        this.btnNhanVe.setDisable(false);
+                         this.cbMaChuyen.setDisable(false);
+                         this.cbViTri.setDisable(false);
+                         
                         ThongTinVeXe rowData = row.getItem();
                         
                         int maVe = rowData.getMaVe();
@@ -307,21 +315,22 @@ public class FXMLDoiHuyVeController implements Initializable {
         String gioHienTai = java.time.LocalTime.now().toString();
         
         if(trangThaiVe == false){
-        
+            int maVe = selected.getMaVe();
             if(ngayDi.compareTo(ngayHienTai) > 0){
             
-                int maVe = selected.getMaVe();
                 v.nhanVe(maVe);
                 Utils.getBox("Nhan ve thanh cong", Alert.AlertType.INFORMATION).show();
                 
             }else if((ngayDi.compareTo(ngayHienTai) == 0 && Utils.soSanhGio(gioHienTai, gioKhoiHanh) >= q.getThoiGianChamNhatNhanVe())){
             
-                int maVe = selected.getMaVe();
+                
                 v.nhanVe(maVe);
                 Utils.getBox("Nhan ve thanh cong", Alert.AlertType.INFORMATION).show();
             }else{
             
-                Utils.getBox("Khach hang da qua thoi gian nhan ve", Alert.AlertType.INFORMATION).show();
+                v.xoaVeXe(maVe);
+                this.tbThongTin.getItems().remove(selected);
+                Utils.getBox("Ve da duoc huy do qua thoi gian nhan ve", Alert.AlertType.INFORMATION).show();
             }
         }else{
         

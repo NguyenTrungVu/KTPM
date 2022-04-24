@@ -12,18 +12,18 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="966.0" stylesheets="@../../../styles/fxmlquanlyve.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nv.saleticketapp.FXMLDoiHuyVeController">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="QUAN LY DOI VE HUY VE" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="QUẢN LÝ ĐỔI VÉ HỦY VÉ" />
       <HBox prefHeight="238.0" prefWidth="600.0">
          <children>
             <VBox prefHeight="238.0" prefWidth="1218.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="32.0" prefWidth="274.0">
                      <children>
-                        <Label text="So dien thoai" />
+                        <Label text="Số điện thoại" />
                         <TextField fx:id="txtSoDienThoai" prefHeight="26.0" prefWidth="195.0" />
                         <HBox alignment="CENTER" prefHeight="26.0" prefWidth="272.0">
                            <children>
-                              <Label text="Vi tri ghe">
+                              <Label text="Vị trí ghế">
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
@@ -36,7 +36,7 @@
                         </HBox>
                         <HBox alignment="CENTER" layoutX="472.0" layoutY="10.0" prefHeight="26.0" prefWidth="272.0">
                            <children>
-                              <Label text="Ma chuyen xe">
+                              <Label text="Mã chuyến xe">
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
@@ -53,26 +53,26 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="24.0" prefWidth="878.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#timVe" text="Tim ve">
+            <Button mnemonicParsing="false" onAction="#timVe" text="Tìm vé">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btnDoiVe" alignment="CENTER" mnemonicParsing="false" onAction="#doiVe" text="Doi ve">
+            <Button fx:id="btnDoiVe" alignment="CENTER" mnemonicParsing="false" onAction="#doiVe" text="Đổi vé">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>
-            <Button fx:id="btnHuyVe" alignment="CENTER" mnemonicParsing="false" onAction="#huyVe" text="Huy Ve">
+            <Button fx:id="btnHuyVe" alignment="CENTER" mnemonicParsing="false" onAction="#huyVe" text="Hủy vé">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
                   <Insets />
                </HBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#nhanVe" text="Nhan Ve">
+            <Button fx:id="btnNhanVe" mnemonicParsing="false" onAction="#nhanVe" text="Nhận vé">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
@@ -81,13 +81,13 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">
          <children>
-            <Label text="Nhan vien" />
+            <Label text="Nhân viên" />
             <TextField fx:id="txtTenNhanVien" disable="true" text="Nam" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">
          <children>
-            <Label text="Ngay in" />
+            <Label text="Ngày in" />
             <TextField fx:id="txtNgayIn" disable="true" />
          </children>
       </HBox>

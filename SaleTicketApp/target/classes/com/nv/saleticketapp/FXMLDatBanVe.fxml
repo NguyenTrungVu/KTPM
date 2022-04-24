@@ -13,44 +13,44 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="862.0" stylesheets="@../../../styles/fxmlquanlyve.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nv.saleticketapp.FXMLDatBanVeController">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="QUAN LY DAT VE BAN VE" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="QUẢN LÝ ĐẶT VÉ BÁN VÉ" />
       <HBox prefHeight="130.0" prefWidth="754.0">
          <children>
             <VBox prefHeight="155.0" prefWidth="289.0">
                <children>
                   <HBox prefHeight="26.0" prefWidth="255.0">
                      <children>
-                        <Label text="Noi di" />
+                        <Label text="Nơi đi" />
                         <ComboBox fx:id="cbNoiDi" prefHeight="37.0" prefWidth="149.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="20.0" layoutY="20.0" prefHeight="26.0" prefWidth="255.0">
                      <children>
-                        <Label text="Noi den" />
+                        <Label text="Nơi đến" />
                         <ComboBox fx:id="cbNoiDen" prefHeight="67.0" prefWidth="149.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="20.0" layoutY="20.0" prefHeight="26.0" prefWidth="255.0">
                      <children>
-                        <Label text="Ngay di" />
+                        <Label text="Ngày đi" />
                         <DatePicker fx:id="dpNgayDi" prefHeight="26.0" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="34.0" prefWidth="600.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="62.0" text="Ho ten" />
+                        <Label prefHeight="18.0" prefWidth="62.0" text="Họ tên" />
                         <TextField fx:id="txtHoTen" prefHeight="26.0" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="32.0" prefWidth="274.0">
                      <children>
-                        <Label prefHeight="25.0" prefWidth="88.0" text="So dien thoai" />
+                        <Label prefHeight="25.0" prefWidth="88.0" text="Số điện thoại" />
                         <TextField fx:id="txtSoDienThoai" prefHeight="25.0" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="34.0" prefWidth="600.0">
                      <children>
-                        <Label text="Vi tri ghe" />
+                        <Label text="Vị trí ghế" />
                         <ComboBox fx:id="cbViTri" prefWidth="150.0" />
                      </children>
                   </HBox>
@@ -60,17 +60,17 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="44.0" prefWidth="907.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#traCuuChuyenDi" text="Tra cuu">
+                        <Button mnemonicParsing="false" onAction="#traCuuChuyenDi" text="Tra cứu">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnBanVe" mnemonicParsing="false" onAction="#banVe" text="Ban ve">
+                        <Button fx:id="btnBanVe" mnemonicParsing="false" onAction="#banVe" text="Bán vé">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnDatVe" mnemonicParsing="false" onAction="#datVe" text="Dat ve">
+                        <Button fx:id="btnDatVe" mnemonicParsing="false" onAction="#datVe" text="Đặt vé">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -86,9 +86,9 @@
          <children>
             <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">
                <children>
-                  <Label alignment="TOP_LEFT" text="Ten nhan vien" />
+                  <Label alignment="TOP_LEFT" text="Tên nhân viên" />
                   <TextField fx:id="txtTenNhanVien" disable="true" editable="false" prefHeight="26.0" prefWidth="797.0" text="Nam" />
-                  <Label alignment="TOP_LEFT" layoutX="285.0" layoutY="10.0" text="Ma nhan vien">
+                  <Label alignment="TOP_LEFT" layoutX="285.0" layoutY="10.0" text="Mã nhân viên">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
@@ -98,7 +98,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">
                <children>
-                  <Label text="Ngay in" />
+                  <Label text="Ngày in" />
                   <TextField fx:id="txtNgayIn" alignment="CENTER" disable="true" prefHeight="34.0" prefWidth="441.0" styleClass="ngayIn" />
                </children>
             </HBox>

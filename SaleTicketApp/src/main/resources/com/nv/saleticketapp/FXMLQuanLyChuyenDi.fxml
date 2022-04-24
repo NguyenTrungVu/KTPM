@@ -37,9 +37,9 @@
       </HBox>
       <HBox prefHeight="18.0" prefWidth="600.0">
          <children>
-            <Label text="Noi di" />
+            <Label text="Nơi đi" />
             <ComboBox fx:id="cbNoiDi" prefHeight="40.0" prefWidth="200.0" />
-            <Label styleClass="lbRight" text="Noi den">
+            <Label styleClass="lbRight" text="Nơi đến">
                <HBox.margin>
                   <Insets left="150.0" />
                </HBox.margin></Label>
@@ -48,7 +48,7 @@
       </HBox>
       <HBox layoutX="10.0" layoutY="27.0" prefHeight="18.0" prefWidth="600.0">
          <children>
-            <Label text="Giờ khoi hanh" />
+            <Label text="Giờ khởi hành" />
             <TextField fx:id="txtGioKhoiHanh" prefHeight="40.0" prefWidth="204.0" />
             <Label styleClass="lbRight" text="Ngày đi">
                <HBox.margin>
@@ -61,7 +61,7 @@
          <children>
             <Label text="Giá tiền" />
             <TextField fx:id="txtGia" />
-            <Label styleClass="lbRight" text="Ma xe">
+            <Label styleClass="lbRight" text="Mã xe">
                <HBox.margin>
                   <Insets left="150.0" />
                </HBox.margin></Label>

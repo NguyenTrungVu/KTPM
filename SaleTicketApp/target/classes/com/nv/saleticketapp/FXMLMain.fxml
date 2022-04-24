@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="705.0" stylesheets="@../../../styles/tripmanage.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nv.saleticketapp.FXMLMainController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subject" text="TICKET APP" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#clickDatBanVe" prefHeight="200.0" prefWidth="300.0" styleClass="btnMain" text="Đặt bán vé">
+               <graphic>
+                  <ImageView fitHeight="120.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" styleClass="imgMain">
+                     <image>
+                        <Image url="@../../../image/datve1.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#clickDoiHuyVe" prefHeight="88.0" prefWidth="294.0" styleClass="btnMain" text="Đổi hủy vé">
+               <graphic>
+                  <ImageView fitHeight="120.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" styleClass="imgMain">
+                     <image>
+                        <Image url="@../../../image/doitra.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#clickQuanLiChuyenXe" prefHeight="146.0" prefWidth="274.0" text="Quản lý chuyến xe">
+         <graphic>
+            <ImageView fitHeight="120.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" styleClass="imgMain">
+               <image>
+                  <Image url="@../../../image/quanli.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</VBox>

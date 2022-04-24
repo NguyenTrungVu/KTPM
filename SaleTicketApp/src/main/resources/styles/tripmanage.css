@@ -75,3 +75,12 @@ TextField, DatePicker{
 .mainFxmlClass {
    
 }
+.btnMain{
+    -fx-pref-width: 300;
+    -fx-pref-height: 200;
+    
+}
+.imgMain{
+    -fx-pref-width: 300;
+    -fx-pref-height: 120;
+}

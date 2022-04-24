@@ -66,6 +66,10 @@ public class FXMLDatBanVeController implements Initializable {
         
         btnBanVe.setDisable(true);
         btnDatVe.setDisable(true);
+        this.txtHoTen.setDisable(true);
+        this.txtSoDienThoai.setDisable(true);
+        this.cbViTri.setDisable(true);
+        
         Utils.xuLiComboBoxNoiDi(this.cbNoiDi);
         Utils.xuLiComboBoxNoiDen(this.cbNoiDen);
         Utils.loadTableViewChuyenDi(this.tbThongTin);
@@ -81,7 +85,9 @@ public class FXMLDatBanVeController implements Initializable {
                 if (event.getClickCount() == 1 && (! row.isEmpty()) ) {
                     btnDatVe.setDisable(false);
                     btnBanVe.setDisable(false);
-                    
+                    this.txtHoTen.setDisable(false);
+                    this.txtSoDienThoai.setDisable(false);
+                    this.cbViTri.setDisable(false);
                     
                     ThongTinCacChuyenXe rowData = row.getItem();
                     int maXe = 0;
