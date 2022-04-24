@@ -116,6 +116,17 @@ public class DuLieuChuyenXe {
         return null;
     }
     
+    public ChuyenXe getChuyenXeByMa(int maChuyenXe) throws SQLException{
+        List<ChuyenXe> data = getChuyenXe();
+        for(ChuyenXe d: data){
+            if(d.getMaChuyenXe() == maChuyenXe){
+                return d;
+            }
+        }
+        return null;
+    }
+
+    
     public int getMaTuyenByMa(int maChuyenXe) throws SQLException{
     
         List<ChuyenXe> data = getChuyenXe();
@@ -140,7 +151,35 @@ public class DuLieuChuyenXe {
         return 0;
     }
     
+    
+    public float getGiaXeByMa(int maChuyenXe) throws SQLException{
+    
+        List<ChuyenXe> data = getChuyenXe();
+        
+        for (ChuyenXe d: data){
+            if(d.getMaChuyenXe()== maChuyenXe){
+                return d.getGia();
+            }
+        }
+        return 0;
+    }
+    
     public Date getNgayKhoiHanhByMa(int maChuyenXe) throws SQLException{
+    
+
+        try (Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("select ngayDi from chuyenxe where maChuyenXe = ?");
+            stm.setInt(1, maChuyenXe);
+            ResultSet rs = stm.executeQuery();
+            
+            while(rs.next()){
+                return rs.getDate(1);
+            }
+        }
+        return new Date(0);
+    }
+    
+    public Date getNgayKhoiHanh2ByMa(int maChuyenXe) throws SQLException{
     
 
         try (Connection conn = JdbcUtils.getConn()){
@@ -153,5 +192,20 @@ public class DuLieuChuyenXe {
             }
         }
         return new Date(0);
+    }
+    
+    public String getGioKhoiHanhByMa(int maChuyenXe) throws SQLException{
+    
+
+        try (Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("select gioKhoiHanh from chuyenxe where maChuyenXe = ?");
+            stm.setInt(1, maChuyenXe);
+            ResultSet rs = stm.executeQuery();
+            
+            while(rs.next()){
+                return rs.getString(1);
+            }
+        }
+        return null;
     }
 }

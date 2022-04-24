@@ -183,8 +183,7 @@ public class FXMLDatBanVeController implements Initializable {
 
             }
             
-        }
-        else if(ngayDi.compareTo(ngayHienTai) == 0 && Utils.soSanhGio(gioHienTai, gioKhoiHanh) >= q.getThoiChamNhatMuaVe()){
+        }else if(ngayDi.compareTo(ngayHienTai) == 0 && Utils.soSanhGio(gioHienTai, gioKhoiHanh) >= q.getThoiChamNhatMuaVe()){
         
             if (this.txtHoTen.getText().compareTo("") == 0 || this.txtSoDienThoai.getText().compareTo("") == 0
                 || this.cbViTri.getValue().toString().compareTo("") == 0
@@ -240,9 +239,7 @@ public class FXMLDatBanVeController implements Initializable {
                 this.cbViTri.setValue(null);
 
             }
-        }
-        
-        else{
+        }else{
         
             Utils.getBox("Ban da bo lo chuyen xe nay", Alert.AlertType.INFORMATION).show();
         }

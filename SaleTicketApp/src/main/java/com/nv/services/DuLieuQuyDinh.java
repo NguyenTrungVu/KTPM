@@ -40,6 +40,7 @@ public class DuLieuQuyDinh {
             return x.getThoiGianChamNhatDatVe();
         return 0;
     }
+
     
     public int getThoiChamNhatMuaVe() throws SQLException{
     
@@ -56,6 +57,15 @@ public class DuLieuQuyDinh {
             return x.getThoiGianChamDoiHuyVe();
         return 0;
     }
+    
+    public int getThoiGianChamNhatNhanVe() throws SQLException{
+    
+        List<QuyDinh> q = getQuyDinh();
+        for(QuyDinh x : q)
+            return x.getThoiGianChamNhatNhanVe();
+        return 0;
+    }
+    
     
     
     

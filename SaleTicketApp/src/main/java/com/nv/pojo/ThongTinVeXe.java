@@ -16,14 +16,14 @@ public class ThongTinVeXe {
     private String banSo;
     private String noiDi;
     private String noiDen;
-    private Date ngayDi;
+    private String ngayDi;
     private String gioKhoiHanh;
     private String hoTen;
     private String soDienThoai;
-    private String viTriGhe;
+    private int viTriGhe;
     private Float gia;
 
-    public ThongTinVeXe(int maVe, String banSo, String noiDi, String noiDen, Date ngayDi, String gioKhoiHanh, String hoTen, String soDienThoai, String viTriGhe, Float gia) {
+    public ThongTinVeXe(int maVe, String banSo, String noiDi, String noiDen, String ngayDi, String gioKhoiHanh, String hoTen, String soDienThoai, int viTriGhe, Float gia) {
         this.maVe = maVe;
         this.banSo = banSo;
         this.noiDi = noiDi;
@@ -98,14 +98,14 @@ public class ThongTinVeXe {
     /**
      * @return the ngayDi
      */
-    public Date getNgayDi() {
+    public String getNgayDi() {
         return ngayDi;
     }
 
     /**
      * @param ngayDi the ngayDi to set
      */
-    public void setNgayDi(Date ngayDi) {
+    public void setNgayDi(String ngayDi) {
         this.ngayDi = ngayDi;
     }
 
@@ -154,14 +154,14 @@ public class ThongTinVeXe {
     /**
      * @return the viTriGhe
      */
-    public String getViTriGhe() {
+    public int getViTriGhe() {
         return viTriGhe;
     }
 
     /**
      * @param viTriGhe the viTriGhe to set
      */
-    public void setViTriGhe(String viTriGhe) {
+    public void setViTriGhe(int viTriGhe) {
         this.viTriGhe = viTriGhe;
     }
 

@@ -67,5 +67,20 @@ public class DuLieuChiTietVeXe {
             Utils.getBox("Them chi tiet ve xe thanh cong", Alert.AlertType.CONFIRMATION).show();
 
     }
+     
+     public int getViTriGhe(int maVe) throws SQLException{
+     
+          try(Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("SELECT viTriGhe FROM chitietvexe where maVe=?;");
+            stm.setInt(1, maVe);
+
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                return rs.getInt(1);
+            }
+
+        }
+        return 0;
+     }
 }
 

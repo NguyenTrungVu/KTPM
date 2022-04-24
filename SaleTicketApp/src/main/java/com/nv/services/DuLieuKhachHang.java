@@ -39,6 +39,17 @@ public class DuLieuKhachHang {
         return results;
     }
     
+    
+    public KhachHang getKhachHangBySoDienThoai(String soDienThoai) throws SQLException{
+        List<KhachHang> kh = getKhachHang();
+        for(KhachHang k : kh){
+            if(k.getSoDienThoai().compareTo(soDienThoai) == 0)
+                return k;
+        }
+
+        return null;
+    }
+    
     public void addKhachHang(String hoTen, String soDienThoai){
     
         try {
@@ -64,5 +75,29 @@ public class DuLieuKhachHang {
         }
 
         return 0;
+    }
+    
+    
+    
+    public String getTenByMa(int maKh) throws SQLException{
+        
+        List<KhachHang> kh = getKhachHang();
+        for(KhachHang k : kh){
+            if(k.getMaKh() == maKh)
+                return k.getTenKh();
+        }
+
+        return null;
+    }
+    
+     public String getSoDienThoaiByMa(int maKh) throws SQLException{
+        
+        List<KhachHang> kh = getKhachHang();
+        for(KhachHang k : kh){
+            if(k.getMaKh() == maKh)
+                return k.getSoDienThoai();
+        }
+
+        return null;
     }
 }

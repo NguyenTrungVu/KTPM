@@ -33,7 +33,7 @@ CREATE TABLE `chitietvexe` (
   KEY `fk_chtietxe_vexe_idx` (`maVe`),
   CONSTRAINT `fk_chitietve_xe` FOREIGN KEY (`maXe`) REFERENCES `xe` (`maXe`),
   CONSTRAINT `fk_chtietxe_vexe` FOREIGN KEY (`maVe`) REFERENCES `vexe` (`maVe`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,8 @@ CREATE TABLE `chuyenxe` (
   PRIMARY KEY (`maChuyenXe`),
   KEY `fk_idx` (`maTuyen`),
   KEY `fk_xe_idx` (`maXe`),
-  CONSTRAINT `fk` FOREIGN KEY (`maTuyen`) REFERENCES `tuyenxe` (`maTuyen`)
+  CONSTRAINT `fk` FOREIGN KEY (`maTuyen`) REFERENCES `tuyenxe` (`maTuyen`),
+  CONSTRAINT `fk_xe_chuyenXe` FOREIGN KEY (`maXe`) REFERENCES `xe` (`maXe`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -74,7 +75,7 @@ CREATE TABLE `chuyenxe` (
 
 LOCK TABLES `chuyenxe` WRITE;
 /*!40000 ALTER TABLE `chuyenxe` DISABLE KEYS */;
-INSERT INTO `chuyenxe` VALUES (1,'SaiGon-BinhDinh','23:50:00','2022-04-26 00:00:00',300,1,1),(2,'SaiGon-KonTom','23:45:00','2022-04-22 00:00:00',350,3,2),(3,'SG-BD_PhuongTrang','00:50:00','2022-04-23 00:00:00',320,1,3),(4,'SG-BD2','23:59:00','2022-04-20 00:00:00',310,1,4);
+INSERT INTO `chuyenxe` VALUES (1,'SaiGon-BinhDinh','23:50:00','2022-04-26 00:00:00',300,1,1),(2,'SaiGon-KonTom','10:45:00','2022-04-24 00:00:00',350,3,2),(3,'SG-BD_PhuongTrang','11:45:00','2022-04-24 00:00:00',320,1,3),(4,'SG-BD2','11:05:00','2022-04-24 00:00:00',310,1,4);
 /*!40000 ALTER TABLE `chuyenxe` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +103,7 @@ CREATE TABLE `khachhang` (
 
 LOCK TABLES `khachhang` WRITE;
 /*!40000 ALTER TABLE `khachhang` DISABLE KEYS */;
-INSERT INTO `khachhang` VALUES (1,'Nam','Nam','Binh Dinh','382890580'),(2,'Vu','Nam','KomTom','12345678'),(11,'nam',NULL,NULL,'999');
+INSERT INTO `khachhang` VALUES (1,'Nam','Nam','Binh Dinh','123'),(2,'Vu','Nam','KomTom','12345678'),(11,'nam',NULL,NULL,'999');
 /*!40000 ALTER TABLE `khachhang` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,10 +200,10 @@ DROP TABLE IF EXISTS `thongtincacchuyenxe`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `thongtincacchuyenxe` (
   `maChuyenXe` int DEFAULT NULL,
-  `noiDi` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `noiDen` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `noiDi` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `noiDen` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ngayDi` date DEFAULT NULL,
-  `gioKhoiHanh` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gioKhoiHanh` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `gia` float DEFAULT NULL,
   `gheConTrong` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -264,7 +265,7 @@ CREATE TABLE `vexe` (
   CONSTRAINT `fk_vexe_chuyenxe` FOREIGN KEY (`maChuyenXe`) REFERENCES `chuyenxe` (`maChuyenXe`) ON DELETE CASCADE,
   CONSTRAINT `fk_vexe_kh` FOREIGN KEY (`maKh`) REFERENCES `khachhang` (`maKh`),
   CONSTRAINT `fk_vexe_nv` FOREIGN KEY (`maNv`) REFERENCES `nhanvien` (`maNv`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -273,7 +274,7 @@ CREATE TABLE `vexe` (
 
 LOCK TABLES `vexe` WRITE;
 /*!40000 ALTER TABLE `vexe` DISABLE KEYS */;
-INSERT INTO `vexe` VALUES (1,2,1,1,NULL),(2,2,2,2,NULL),(3,2,2,1,NULL),(4,2,1,4,NULL);
+INSERT INTO `vexe` VALUES (1,2,1,1,1),(2,2,2,2,1),(3,2,2,1,1),(4,2,1,4,0);
 /*!40000 ALTER TABLE `vexe` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -312,4 +313,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-23  0:19:14
+-- Dump completed on 2022-04-24 10:48:05

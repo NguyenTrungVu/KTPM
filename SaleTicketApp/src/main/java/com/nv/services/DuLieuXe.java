@@ -50,4 +50,24 @@ public class DuLieuXe {
         return 0;
         
     } 
+     
+     public String getBanSo(int maXe) throws SQLException{
+    
+        try(Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("select banSo from xe where maXe=?");
+            stm.setInt(1, maXe);
+
+            ResultSet rs = stm.executeQuery();
+            
+            while(rs.next()){
+
+                return rs.getString(1);
+            }
+
+        }
+        return null;
+        
+    }
+     
+     
 }

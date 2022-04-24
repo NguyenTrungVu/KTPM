@@ -12,7 +12,6 @@ com\nv\services\DuLieuXe.class
 module-info.class
 com\nv\pojo\Xe.class
 com\nv\pojo\ChiTietVeXe.class
-com\nv\saleticketapp\FXMLDoiHuyVeController.class
 com\nv\services\DuLieuNhanVien.class
 com\nv\services\DuLieuChiTietVeXe.class
 com\nv\services\DuLieuKhachHang.class

@@ -88,6 +88,73 @@ public class DuLieuVeXe {
         return 0;
         
     } 
+    
+    public void suaVeXe(int maChuyen, int viTriGhe, int maVe) throws SQLException{
+        Connection conn = JdbcUtils.getConn();
+        
+        if(maChuyen != 0){
+            PreparedStatement stm = conn.prepareStatement("UPDATE vexe set maChuyenXe = ? where maVe=?");
+
+            stm.setInt(1, maChuyen);
+            stm.setInt(2, maVe);
+            stm.executeUpdate();
+
+        }
+        
+        PreparedStatement stm = conn.prepareStatement("UPDATE chitietvexe set viTriGhe = ? where maVe=?");
+
+            stm.setInt(1, viTriGhe);
+            stm.setInt(2, maVe);
+            stm.executeUpdate();
+            
+    }
+    
+    
+    public boolean getTrangThaiVe(int maVe) throws SQLException{
+    
+        try(Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("SELECT trangThaiVe FROM vexe where maVe=?");
+            stm.setInt(1, maVe);
+
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                return rs.getBoolean(1);
+            }
+
+        }
+        return false;
+    }
+    
+    
+     public int getMaChuyenByMa(int maVe) throws SQLException{
+    
+
+        try(Connection conn = JdbcUtils.getConn()){
+            PreparedStatement stm = conn.prepareStatement("SELECT maChuyenXe FROM vexe where maVe=?");
+            stm.setInt(1, maVe);
+
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                return rs.getInt(1);
+            }
+
+        }
+        return 0;
+        
+    } 
+    
+    public void nhanVe(int maVe) throws SQLException{
+    
+         Connection conn = JdbcUtils.getConn();
+
+        
+        PreparedStatement stm = conn.prepareStatement("UPDATE vexe set trangThaiVe = ? where maVe=?");
+
+            stm.setBoolean(1, true);
+            stm.setInt(2, maVe);
+            stm.executeUpdate();
+    }
+    
     public void addVeXe(VeXe veXe){
     
          try {
@@ -105,6 +172,16 @@ public class DuLieuVeXe {
                 Logger.getLogger(FXMLQuanLyChuyenDiController.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
+    
+    public void xoaVeXe(int maVe) throws SQLException{
+    Connection conn = JdbcUtils.getConn();
+            PreparedStatement stm = conn.prepareStatement("DELETE FROM vexe WHERE maVe = ?");
+            stm.setInt(1, maVe);
+            stm.executeUpdate();
+            
+        
+    }
+    
     
     public int getMaVeVuaDat() throws SQLException{
     

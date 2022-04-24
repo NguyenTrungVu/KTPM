@@ -7,6 +7,7 @@ package com.nv.utils;
 import com.nv.pojo.ChiTietVeXe;
 import com.nv.pojo.ChuyenXe;
 import com.nv.pojo.ThongTinCacChuyenXe;
+import com.nv.pojo.ThongTinVeXe;
 import com.nv.pojo.VeXe;
 import com.nv.saleticketapp.FXMLTraCuuChuyenDiController;
 import com.nv.services.DuLieuChiTietVeXe;
@@ -280,6 +281,57 @@ public class Utils {
 
      }
      
+     
+    public static void loadViTriGhe3(ComboBox<Integer> viTriGhe, int soLuongGhe, int maChuyen){
+        DuLieuVeXe v = new DuLieuVeXe();
+        DuLieuChiTietVeXe chiTietVeXe = new DuLieuChiTietVeXe();
+        DuLieuXe x = new DuLieuXe();
+        DuLieuChuyenXe chuyenXe = new DuLieuChuyenXe();
+        List<Integer> viTriGheDaDat = new ArrayList<>();
+        List<Integer> maVeDaDat = new ArrayList<>();
+
+        try {
+            for(VeXe ve: v.getVeXe()){
+                if(ve.getMaChuyenXe() == maChuyen)
+                    maVeDaDat.add(ve.getMaVe());
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+
+        try {
+            for(ChiTietVeXe c: chiTietVeXe.getChiTietVeXe()){
+
+                if(maVeDaDat.contains(c.getMaVe()))
+                    viTriGheDaDat.add(c.getViTriGhe());
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        int maXe = 0;
+
+        try {
+            maXe = chuyenXe.getMaXeByMa(maChuyen);
+        } catch (SQLException ex) {
+            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+         
+        List<Integer> viTri = new ArrayList<>();
+        for(int i =1; i <= soLuongGhe; i++){
+         if(viTriGheDaDat.contains(i) == false)
+            viTri.add(i);
+        }
+
+         viTriGhe.setItems(FXCollections.observableList(viTri));
+
+     }
+     
      public static List<String> xoaPhanTuTrung(List<String> list){
     
          // tạo 1 ArrayList arrTemp
@@ -299,5 +351,66 @@ public class Utils {
         list.addAll(arrTemp);
         
         return list;
+    }
+     
+     
+     
+      public static void loadTableViewVeXe(TableView<ThongTinVeXe> tbView) {
+        TableColumn colMaVe = new TableColumn("Ma Ve");
+        colMaVe.setCellValueFactory(new PropertyValueFactory("maVe"));
+        colMaVe.setPrefWidth(100);
+        
+        TableColumn colBanSo = new TableColumn("Ban So");
+        colBanSo.setCellValueFactory(new PropertyValueFactory("banSo"));
+        colBanSo.setPrefWidth(100);
+        
+        TableColumn colNoiDi = new TableColumn("Noi Di");
+        colNoiDi.setCellValueFactory(new PropertyValueFactory("noiDi"));
+        colNoiDi.setPrefWidth(100);
+        
+        TableColumn colNoiDen  = new TableColumn("Noi Den");
+        colNoiDen.setCellValueFactory(new PropertyValueFactory("noiDen"));
+        colNoiDen.setPrefWidth(100);
+        
+        TableColumn colNgay = new TableColumn("Ngay Di");
+        colNgay.setCellValueFactory(new PropertyValueFactory("ngayDi"));
+        colNgay.setPrefWidth(100);
+        
+        TableColumn colGio = new TableColumn("Gio khoi hanh");
+        colGio.setCellValueFactory(new PropertyValueFactory("gioKhoiHanh"));
+        colGio.setPrefWidth(130);
+        
+        TableColumn colHoTen  = new TableColumn("Ho Ten");
+        colHoTen.setCellValueFactory(new PropertyValueFactory("hoTen"));
+        colHoTen.setPrefWidth(100);
+        
+        TableColumn colSoDienThoai  = new TableColumn("So Dien Thoai");
+        colSoDienThoai.setCellValueFactory(new PropertyValueFactory("soDienThoai"));
+        colSoDienThoai.setPrefWidth(120);
+        
+        TableColumn colViTriGhe = new TableColumn("Vi Tri Ghe");
+        colViTriGhe.setCellValueFactory(new PropertyValueFactory("viTriGhe"));
+        colViTriGhe.setPrefWidth(100);
+        
+        TableColumn colGia = new TableColumn("Gia");
+        colGia.setCellValueFactory(new PropertyValueFactory("gia"));
+        colGia.setPrefWidth(100);
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        tbView.getColumns().addAll(colMaVe, colBanSo, colNoiDi, colNoiDen, colNgay, colGio, colHoTen, colSoDienThoai, colViTriGhe, colGia);
+    }
+    
+    public static void loadTableDataVeXe(List<ThongTinVeXe> list, TableView<ThongTinVeXe> tbView){
+        tbView.setItems(FXCollections.observableList(list));
     }
 }
