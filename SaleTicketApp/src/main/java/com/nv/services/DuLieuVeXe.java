@@ -195,6 +195,32 @@ public class DuLieuVeXe {
         }
         return 0;
     }
+    
+    public VeXe getVe(int maVe){
+         try {
+             List<VeXe> v1 = getVeXe();
+             for(VeXe v: v1){
+                 if(v.getMaVe()==maVe){
+                     return v;
+                 }
+             }
+             
+         } catch (SQLException ex) {
+             Logger.getLogger(DuLieuVeXe.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        return null;
+    }
+    
+    public List<Integer> getmaVeByMaKhach(int maKh) throws SQLException{
+        List<VeXe> data = getVeXe();
+        List<Integer> kq = new ArrayList<>();
+        for(VeXe d: data){
+            if(d.getMaKh()==maKh)
+                kq.add(maKh);
+            
+        }
+        return kq;
+    }
 
     
     
