@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nv.category.CategoryTest" time="0.501" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nv.category.KhachHangTest" time="0.103" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -55,5 +55,8 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="abc" classname="com.nv.category.CategoryTest" time="0.033"/>
+  <testcase name="getMaKhachHangBySoDtDung{String, int}[1]" classname="com.nv.category.KhachHangTest" time="0.012"/>
+  <testcase name="getMaKhachHangBySoDtDung{String, int}[2]" classname="com.nv.category.KhachHangTest" time="0.013"/>
+  <testcase name="addKhachHangTest" classname="com.nv.category.KhachHangTest" time="0.05"/>
+  <testcase name="getMaKhachHangBySoDtSai{String, int}[1]" classname="com.nv.category.KhachHangTest" time="0.016"/>
 </testsuite>

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.nv.category.CategoryTest
+Test set: com.nv.category.KhachHangTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.501 s - in com.nv.category.CategoryTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 s - in com.nv.category.KhachHangTest

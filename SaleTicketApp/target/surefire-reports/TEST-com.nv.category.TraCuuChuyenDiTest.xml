@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nv.category.CategoryTest" time="0.501" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nv.category.TraCuuChuyenDiTest" time="0.517" tests="28" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -55,5 +55,36 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="abc" classname="com.nv.category.CategoryTest" time="0.033"/>
+  <testcase name="getNoiDenByMaDung" classname="com.nv.category.TraCuuChuyenDiTest" time="0.022"/>
+  <testcase name="getNoiDiByMaDung" classname="com.nv.category.TraCuuChuyenDiTest" time="0.023"/>
+  <testcase name="getNoiDiByMaDung{int}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.032"/>
+  <testcase name="getNoiDiByMaDung{int}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.029"/>
+  <testcase name="getDanhSachByMaDung{int, String}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
+  <testcase name="getTenChuyenByMaDung{int, String}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
+  <testcase name="getTenChuyenByMaDung{int, String}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.021">
+    <failure message="expected: &lt;SG_BD_PT&gt; but was: &lt;SG-BD_PT&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <SG_BD_PT> but was: <SG-BD_PT>
+	at com.nv.saleticketapp/com.nv.category.TraCuuChuyenDiTest.getTenChuyenByMaDung(TraCuuChuyenDiTest.java:48)
+]]></failure>
+  </testcase>
+  <testcase name="getTenChuyenByMaDung{int, String}[3]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
+  <testcase name="getSlGheByMa" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
+  <testcase name="getMaXeByMaDung{int, int}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
+  <testcase name="getMaXeByMaDung{int, int}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getMaXeByMaDung{int, int}[3]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getNoiDiByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
+  <testcase name="getNgayKhoiHanhByMaDung{int, Timestamp}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.017"/>
+  <testcase name="getNgayKhoiHanhByMaDung{int, Timestamp}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.013"/>
+  <testcase name="getDanhSachByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
+  <testcase name="getTenChuyenByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.013"/>
+  <testcase name="getSlGheByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.012"/>
+  <testcase name="getMaTuyenByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.018"/>
+  <testcase name="getNoiDenByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.012"/>
+  <testcase name="getMaXeByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
+  <testcase name="getMaTuyenByMaDung{int, int}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
+  <testcase name="getMaTuyenByMaDung{int, int}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getMaTuyenByMaDung{int, int}[3]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
+  <testcase name="getMaTuyenByNoiSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
+  <testcase name="getMaTuyenByTenSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getMaTuyenByNoiDung" classname="com.nv.category.TraCuuChuyenDiTest" time="0.013"/>
+  <testcase name="getNgayKhoiHanhByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.011"/>
 </testsuite>

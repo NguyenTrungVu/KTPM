@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.nv.category.TraCuuChuyenDiTest
+-------------------------------------------------------------------------------
+Tests run: 28, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.517 s <<< FAILURE! - in com.nv.category.TraCuuChuyenDiTest
+getTenChuyenByMaDung{int, String}[2]  Time elapsed: 0.021 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <SG_BD_PT> but was: <SG-BD_PT>
+	at com.nv.saleticketapp/com.nv.category.TraCuuChuyenDiTest.getTenChuyenByMaDung(TraCuuChuyenDiTest.java:48)
+
