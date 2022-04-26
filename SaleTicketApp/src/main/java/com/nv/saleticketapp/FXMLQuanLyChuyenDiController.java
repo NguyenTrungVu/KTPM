@@ -10,6 +10,7 @@ import com.nv.pojo.TuyenXe;
 import com.nv.pojo.Xe;
 import com.nv.services.DuLieuChiTietVeXe;
 import com.nv.services.DuLieuChuyenXe;
+import com.nv.services.DuLieuNhanVien;
 import com.nv.services.DuLieuTuyenXe;
 import com.nv.services.DuLieuVeXe;
 import com.nv.services.DuLieuXe;
@@ -61,6 +62,8 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
     @FXML private TableView<ThongTinCacChuyenXe> tbThongTin;
     @FXML private Button btnSua;
     @FXML private Button btnXoa;
+    private int maNv;
+
 
 
     /**
@@ -111,7 +114,7 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
             return row ;
         });
     }    
-    
+
     public void themChuyenDi(ActionEvent evt) throws ParseException{
 
         DuLieuTuyenXe t = new DuLieuTuyenXe();
@@ -282,6 +285,20 @@ public class FXMLQuanLyChuyenDiController implements Initializable {
         }
         
         this.cbMaXe.setItems(FXCollections.observableList(list));
+    }
+
+    /**
+     * @return the maNv
+     */
+    public int getMaNv() {
+        return maNv;
+    }
+
+    /**
+     * @param maNv the maNv to set
+     */
+    public void setMaNv(int maNv) {
+        this.maNv = maNv;
     }
   
 

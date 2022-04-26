@@ -87,7 +87,7 @@
             <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">
                <children>
                   <Label alignment="TOP_LEFT" text="Tên nhân viên" />
-                  <TextField fx:id="txtTenNhanVien" disable="true" editable="false" prefHeight="26.0" prefWidth="797.0" text="Nam" />
+                  <TextField fx:id="txtTenNhanVien" disable="true" editable="false" prefHeight="26.0" prefWidth="797.0" />
                   <Label alignment="TOP_LEFT" layoutX="285.0" layoutY="10.0" text="Mã nhân viên">
                      <HBox.margin>
                         <Insets left="20.0" />

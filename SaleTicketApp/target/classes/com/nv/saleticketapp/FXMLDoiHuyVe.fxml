@@ -82,7 +82,7 @@
       <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">
          <children>
             <Label text="Nhân viên" />
-            <TextField fx:id="txtTenNhanVien" disable="true" text="Nam" />
+            <TextField fx:id="txtTenNhanVien" disable="true" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">

@@ -1,12 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: com.nv.category.VeXeTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.205 s <<< FAILURE! - in com.nv.category.VeXeTest
-themThanhCong  Time elapsed: 0.024 s  <<< ERROR!
-java.lang.NullPointerException
+Tests run: 12, Failures: 3, Errors: 2, Skipped: 0, Time elapsed: 0.363 s <<< FAILURE! - in com.nv.category.VeXeTest
+themThanhCong  Time elapsed: 0.108 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.nv.pojo.VeXe.getMaVe()" because "v1" is null
 	at com.nv.saleticketapp/com.nv.category.VeXeTest.themThanhCong(VeXeTest.java:92)
 
-getDanhSachMaVeByMaChuyen  Time elapsed: 0.008 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
-	at com.nv.saleticketapp/com.nv.category.VeXeTest.getDanhSachMaVeByMaChuyen(VeXeTest.java:71)
+timVe  Time elapsed: 0.035 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <4> but was: <2>
+	at com.nv.saleticketapp/com.nv.category.VeXeTest.timVe(VeXeTest.java:130)
+
+nhanVeThanhCong  Time elapsed: 0.021 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.nv.pojo.VeXe.setTrangThaiVe(boolean)" because "v1" is null
+	at com.nv.saleticketapp/com.nv.category.VeXeTest.nhanVeThanhCong(VeXeTest.java:167)
+
+getTrangThaiVeTonTai{int}[2]  Time elapsed: 0.018 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.nv.saleticketapp/com.nv.category.VeXeTest.getTrangThaiVeTonTai(VeXeTest.java:110)
+
+getMaVeVuaDat  Time elapsed: 0.012 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <27> but was: <4>
+	at com.nv.saleticketapp/com.nv.category.VeXeTest.getMaVeVuaDat(VeXeTest.java:100)
 

@@ -18,11 +18,13 @@ public class NhanVien {
     private String diaChi;
     private String soDienThoai;
     private int loaiNv;
+    private String userName;
+    private String passWord;
 
     public NhanVien() {
     }
 
-    public NhanVien(int maNv, String tenNv, Date ngaySinh, String gioiTinh, String diaChi, String soDienThoai, int loaiNv) {
+    public NhanVien(int maNv, String tenNv, Date ngaySinh, String gioiTinh, String diaChi, String soDienThoai, int loaiNv, String tenDangNhap, String matKhau) {
         this.maNv = maNv;
         this.tenNv = tenNv;
         this.ngaySinh = ngaySinh;
@@ -30,6 +32,8 @@ public class NhanVien {
         this.diaChi = diaChi;
         this.soDienThoai = soDienThoai;
         this.loaiNv = loaiNv;
+        this.userName = tenDangNhap;
+        this.passWord = matKhau;
     }
 
     
@@ -129,5 +133,33 @@ public class NhanVien {
      */
     public void setLoaiNv(int loaiNv) {
         this.loaiNv = loaiNv;
+    }
+
+    /**
+     * @return the tenDangNhap
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    /**
+     * @param tenDangNhap the tenDangNhap to set
+     */
+    public void setUserName(String tenDangNhap) {
+        this.userName = tenDangNhap;
+    }
+
+    /**
+     * @return the matkhau
+     */
+    public String getPassWord() {
+        return passWord;
+    }
+
+    /**
+     * @param matkhau the matkhau to set
+     */
+    public void setPassWord(String matkhau) {
+        this.passWord = matkhau;
     }
 }

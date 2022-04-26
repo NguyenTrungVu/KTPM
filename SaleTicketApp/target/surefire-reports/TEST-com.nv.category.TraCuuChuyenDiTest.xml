@@ -1,90 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nv.category.TraCuuChuyenDiTest" time="0.517" tests="28" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nv.category.TraCuuChuyenDiTest" time="0.515" tests="28" errors="0" skipped="0" failures="1">
   <properties>
-    <property name="java.specification.version" value="13"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/inmac/Documents/26_04_22/KTPM/SaleTicketApp/target/test-classes:/Users/inmac/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13.jar:/Users/inmac/.m2/repository/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar:/Users/inmac/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/Users/inmac/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/inmac/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/inmac/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/inmac/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/inmac/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/inmac/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/inmac/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\Class\KTPM\TH\SaleTicketApp\target\test-classes;C:\Users\dangn\.m2\repository\org\openjfx\javafx-controls\13\javafx-controls-13.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-graphics\13\javafx-graphics-13.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-base\13\javafx-base-13.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-fxml\13\javafx-fxml-13.jar;C:\Users\dangn\.m2\repository\mysql\mysql-connector-java\8.0.20\mysql-connector-java-8.0.20.jar;C:\Users\dangn\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\dangn\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\dangn\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\dangn\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dangn\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\dangn\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\dangn\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dangn\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="java.vm.specification.version" value="13"/>
-    <property name="user.country" value="VN"/>
+    <property name="user.timezone" value="Asia/Saigon"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/inmac/Documents/26_04_22/KTPM/SaleTicketApp/target/surefire 2022-04-26T08-26-34_792-jvmRun1 surefire3828791723911083321tmp surefire_02328992512528754974tmp"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.2\bin"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\dangn\AppData\Local\Temp\surefire6608197467152132411 2022-04-26T20-41-28_966-jvmRun1 surefire6421684183454067004tmp surefire_09065628583444635836tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/inmac/Documents/26_04_22/KTPM/SaleTicketApp/target/test-classes:/Users/inmac/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13.jar:/Users/inmac/.m2/repository/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar:/Users/inmac/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/Users/inmac/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/inmac/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/inmac/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/inmac/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/inmac/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/inmac/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/inmac/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:"/>
+    <property name="surefire.test.class.path" value="D:\Class\KTPM\TH\SaleTicketApp\target\test-classes;C:\Users\dangn\.m2\repository\org\openjfx\javafx-controls\13\javafx-controls-13.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-graphics\13\javafx-graphics-13.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-base\13\javafx-base-13.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-fxml\13\javafx-fxml-13.jar;C:\Users\dangn\.m2\repository\mysql\mysql-connector-java\8.0.20\mysql-connector-java-8.0.20.jar;C:\Users\dangn\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\dangn\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\dangn\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\dangn\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dangn\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\dangn\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\dangn\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dangn\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/Users/inmac"/>
+    <property name="user.home" value="C:\Users\dangn"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="jdk.module.path" value="/Users/inmac/Documents/26_04_22/KTPM/SaleTicketApp/target/classes:/Users/inmac/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13-mac.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13-mac.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13-mac.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13-mac.jar"/>
-    <property name="java.version.date" value="2020-01-14"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home"/>
-    <property name="file.separator" value="/"/>
-    <property name="basedir" value="/Users/inmac/Documents/26_04_22/KTPM/SaleTicketApp"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="jdk.module.path" value="D:\Class\KTPM\TH\SaleTicketApp\target\classes;C:\Users\dangn\.m2\repository\org\openjfx\javafx-controls\13\javafx-controls-13-win.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-graphics\13\javafx-graphics-13-win.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-base\13\javafx-base-13-win.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-fxml\13\javafx-fxml-13-win.jar"/>
+    <property name="java.version.date" value="2022-01-18"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17.0.2"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\Class\KTPM\TH\SaleTicketApp"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/inmac/.m2/repository/org/apache/maven/surefire/surefire-booter/2.22.2/surefire-booter-2.22.2.jar:/Users/inmac/.m2/repository/org/apache/maven/surefire/surefire-api/2.22.2/surefire-api-2.22.2.jar:/Users/inmac/.m2/repository/org/apache/maven/surefire/surefire-logger-api/2.22.2/surefire-logger-api-2.22.2.jar:/Users/inmac/Documents/26_04_22/KTPM/SaleTicketApp/target/test-classes:/Users/inmac/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13.jar:/Users/inmac/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13.jar:/Users/inmac/.m2/repository/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar:/Users/inmac/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/Users/inmac/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/inmac/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/inmac/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/inmac/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/inmac/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/inmac/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/inmac/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/inmac/.m2/repository/org/apache/maven/surefire/surefire-junit-platform/2.22.2/surefire-junit-platform-2.22.2.jar:/Users/inmac/.m2/repository/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.jar"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\dangn\.m2\repository\org\apache\maven\surefire\surefire-booter\2.22.2\surefire-booter-2.22.2.jar;C:\Users\dangn\.m2\repository\org\apache\maven\surefire\surefire-api\2.22.2\surefire-api-2.22.2.jar;C:\Users\dangn\.m2\repository\org\apache\maven\surefire\surefire-logger-api\2.22.2\surefire-logger-api-2.22.2.jar;D:\Class\KTPM\TH\SaleTicketApp\target\test-classes;C:\Users\dangn\.m2\repository\org\openjfx\javafx-controls\13\javafx-controls-13.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-graphics\13\javafx-graphics-13.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-base\13\javafx-base-13.jar;C:\Users\dangn\.m2\repository\org\openjfx\javafx-fxml\13\javafx-fxml-13.jar;C:\Users\dangn\.m2\repository\mysql\mysql-connector-java\8.0.20\mysql-connector-java-8.0.20.jar;C:\Users\dangn\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\dangn\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\dangn\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\dangn\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dangn\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\dangn\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\dangn\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dangn\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\dangn\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\2.22.2\surefire-junit-platform-2.22.2.jar;C:\Users\dangn\.m2\repository\org\junit\platform\junit-platform-launcher\1.3.1\junit-platform-launcher-1.3.1.jar"/>
+    <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="java.runtime.version" value="13.0.2+8"/>
-    <property name="user.name" value="inmac"/>
-    <property name="path.separator" value=":"/>
-    <property name="os.version" value="10.15.7"/>
+    <property name="java.runtime.version" value="17.0.2+8-LTS-86"/>
+    <property name="user.name" value="DangNgocHoaiNam"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="file.encoding" value="UTF-8"/>
+    <property name="file.encoding" value="Cp1252"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="maven.ext.class.path" value="/Applications/NetBeans/Apache NetBeans 12.6.app/Contents/Resources/NetBeans/netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
-    <property name="localRepository" value="/Users/inmac/.m2/repository"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-13\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="localRepository" value="C:\Users\dangn\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="java.io.tmpdir" value="/var/folders/w5/s0nr443j1rlfbfbn3fdrm00h0000gn/T/"/>
-    <property name="java.version" value="13.0.2"/>
-    <property name="user.dir" value="/Users/inmac/Documents/26_04_22/KTPM/SaleTicketApp"/>
-    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="C:\Users\dangn\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.2"/>
+    <property name="user.dir" value="D:\Class\KTPM\TH\SaleTicketApp"/>
+    <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="java.library.path" value="/Users/inmac/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\libnvvp;C:\Python310\Scripts\;C:\Python310\;D:\IDE\VMware\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\ProgramData\chocolatey\bin;D:\WEB\NodeJs\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\Nsight Compute 2019.4.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk-17.0.2\bin;C:\Users\dangn\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\dangn\AppData\Local\Programs\Python\Python39\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\dangn\AppData\Local\Microsoft\WindowsApps;;D:\IDE\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.3.2\bin;;C:\Program Files\Azure Data Studio\bin;C:\Users\dangn\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.1\bin;;."/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="13.0.2+8"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="java.class.version" value="57.0"/>
+    <property name="java.vm.version" value="17.0.2+8-LTS-86"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="getNoiDenByMaDung" classname="com.nv.category.TraCuuChuyenDiTest" time="0.022"/>
-  <testcase name="getNoiDiByMaDung" classname="com.nv.category.TraCuuChuyenDiTest" time="0.023"/>
-  <testcase name="getNoiDiByMaDung{int}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.032"/>
-  <testcase name="getNoiDiByMaDung{int}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.029"/>
-  <testcase name="getDanhSachByMaDung{int, String}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
-  <testcase name="getTenChuyenByMaDung{int, String}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
-  <testcase name="getTenChuyenByMaDung{int, String}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.021">
+  <testcase name="getNoiDenByMaDung" classname="com.nv.category.TraCuuChuyenDiTest" time="0.021"/>
+  <testcase name="getNoiDiByMaDung" classname="com.nv.category.TraCuuChuyenDiTest" time="0.021"/>
+  <testcase name="getNoiDiByMaDung{int}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.018"/>
+  <testcase name="getNoiDiByMaDung{int}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getDanhSachByMaDung{int, String}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.017"/>
+  <testcase name="getTenChuyenByMaDung{int, String}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.02"/>
+  <testcase name="getTenChuyenByMaDung{int, String}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.019">
     <failure message="expected: &lt;SG_BD_PT&gt; but was: &lt;SG-BD_PT&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <SG_BD_PT> but was: <SG-BD_PT>
 	at com.nv.saleticketapp/com.nv.category.TraCuuChuyenDiTest.getTenChuyenByMaDung(TraCuuChuyenDiTest.java:48)
 ]]></failure>
   </testcase>
-  <testcase name="getTenChuyenByMaDung{int, String}[3]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
-  <testcase name="getSlGheByMa" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
-  <testcase name="getMaXeByMaDung{int, int}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
-  <testcase name="getMaXeByMaDung{int, int}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
-  <testcase name="getMaXeByMaDung{int, int}[3]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getTenChuyenByMaDung{int, String}[3]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.017"/>
+  <testcase name="getSlGheByMa" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
+  <testcase name="getMaXeByMaDung{int, int}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.022"/>
+  <testcase name="getMaXeByMaDung{int, int}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.02"/>
+  <testcase name="getMaXeByMaDung{int, int}[3]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.022"/>
   <testcase name="getNoiDiByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
-  <testcase name="getNgayKhoiHanhByMaDung{int, Timestamp}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.017"/>
-  <testcase name="getNgayKhoiHanhByMaDung{int, Timestamp}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.013"/>
-  <testcase name="getDanhSachByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
-  <testcase name="getTenChuyenByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.013"/>
-  <testcase name="getSlGheByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.012"/>
-  <testcase name="getMaTuyenByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.018"/>
-  <testcase name="getNoiDenByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.012"/>
-  <testcase name="getMaXeByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
-  <testcase name="getMaTuyenByMaDung{int, int}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
-  <testcase name="getMaTuyenByMaDung{int, int}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
-  <testcase name="getMaTuyenByMaDung{int, int}[3]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.014"/>
-  <testcase name="getMaTuyenByNoiSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
-  <testcase name="getMaTuyenByTenSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getNgayKhoiHanhByMaDung{int, Timestamp}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.019"/>
+  <testcase name="getNgayKhoiHanhByMaDung{int, Timestamp}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
+  <testcase name="getDanhSachByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.02"/>
+  <testcase name="getTenChuyenByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getSlGheByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
+  <testcase name="getMaTuyenByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.017"/>
+  <testcase name="getNoiDenByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
+  <testcase name="getMaXeByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.02"/>
+  <testcase name="getMaTuyenByMaDung{int, int}[1]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getMaTuyenByMaDung{int, int}[2]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.016"/>
+  <testcase name="getMaTuyenByMaDung{int, int}[3]" classname="com.nv.category.TraCuuChuyenDiTest" time="0.021"/>
+  <testcase name="getMaTuyenByNoiSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.015"/>
+  <testcase name="getMaTuyenByTenSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.013"/>
   <testcase name="getMaTuyenByNoiDung" classname="com.nv.category.TraCuuChuyenDiTest" time="0.013"/>
-  <testcase name="getNgayKhoiHanhByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.011"/>
+  <testcase name="getNgayKhoiHanhByMaSai" classname="com.nv.category.TraCuuChuyenDiTest" time="0.012"/>
 </testsuite>

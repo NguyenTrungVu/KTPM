@@ -9,6 +9,7 @@ import com.nv.pojo.VeXe;
 import com.nv.services.DuLieuChiTietVeXe;
 import com.nv.services.DuLieuChuyenXe;
 import com.nv.services.DuLieuKhachHang;
+import com.nv.services.DuLieuNhanVien;
 import com.nv.services.DuLieuQuyDinh;
 import com.nv.services.DuLieuTuyenXe;
 import com.nv.services.DuLieuVeXe;
@@ -53,6 +54,8 @@ public class FXMLDoiHuyVeController implements Initializable {
     @FXML private Button btnHuyVe;
     @FXML private ComboBox<Integer> cbMaChuyen;
     @FXML private Button btnNhanVe;
+    private int maNv;
+
  
     /**
      * Initializes the controller class.
@@ -110,6 +113,13 @@ public class FXMLDoiHuyVeController implements Initializable {
         
     }    
     
+    
+ public void loadNhanVien() throws SQLException{
+
+        DuLieuNhanVien nv = new DuLieuNhanVien();
+        this.txtTenNhanVien.setText(nv.getTenNhanVienByMa(maNv));
+
+    }
     
     
     
@@ -369,6 +379,20 @@ public class FXMLDoiHuyVeController implements Initializable {
         cbMaChuyen.setItems(FXCollections.observableList(ma));
         
     
+    }
+
+    /**
+     * @return the maNv
+     */
+    public int getMaNv() {
+        return maNv;
+    }
+
+    /**
+     * @param maNv the maNv to set
+     */
+    public void setMaNv(int maNv) {
+        this.maNv = maNv;
     }
     
     

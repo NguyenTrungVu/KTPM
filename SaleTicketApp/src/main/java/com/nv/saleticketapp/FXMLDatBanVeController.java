@@ -11,6 +11,7 @@ import com.nv.pojo.VeXe;
 import com.nv.services.DuLieuChiTietVeXe;
 import com.nv.services.DuLieuChuyenXe;
 import com.nv.services.DuLieuKhachHang;
+import com.nv.services.DuLieuNhanVien;
 import com.nv.services.DuLieuQuyDinh;
 import com.nv.services.DuLieuVeXe;
 import com.nv.services.DuLieuXe;
@@ -29,6 +30,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -56,6 +58,7 @@ public class FXMLDatBanVeController implements Initializable {
     @FXML private TextField txtTenNhanVien;
     @FXML private TextField txtNgayIn;
     @FXML private TextField txtMaNhanVien;
+    private int maNv;
 
     /**
      * Initializes the controller class.
@@ -74,6 +77,8 @@ public class FXMLDatBanVeController implements Initializable {
         Utils.xuLiComboBoxNoiDen(this.cbNoiDen);
         Utils.loadTableViewChuyenDi(this.tbThongTin);
         this.txtNgayIn.setText(java.time.LocalDate.now() + " " + java.time.LocalTime.now());
+        
+        
         DuLieuVeXe v = new DuLieuVeXe();
         DuLieuChiTietVeXe chiTietVeXe = new DuLieuChiTietVeXe();
         DuLieuXe x = new DuLieuXe();
@@ -110,9 +115,18 @@ public class FXMLDatBanVeController implements Initializable {
         
     }    
     
+    public void loadNhanVien() throws SQLException{
+
+        DuLieuNhanVien nv = new DuLieuNhanVien();
+        this.txtTenNhanVien.setText(nv.getTenNhanVienByMa(maNv));
+        this.txtMaNhanVien.setText(String.valueOf(maNv));
+    }
+    
+    
     public void traCuuChuyenDi(ActionEvent evt) throws SQLException{
         btnBanVe.setDisable(true);
         btnDatVe.setDisable(true);
+
 
 
         Utils.traCuuChuyenDi(this.cbNoiDi, this.cbNoiDen, this.dpNgayDi, this.tbThongTin);
@@ -389,6 +403,20 @@ public class FXMLDatBanVeController implements Initializable {
         
             Utils.getBox("Ban da bo lo chuyen xe nay", Alert.AlertType.INFORMATION).show();
         }
+    }
+
+    /**
+     * @return the maNv
+     */
+    public int getMaNv() {
+        return maNv;
+    }
+
+    /**
+     * @param maNv the maNv to set
+     */
+    public void setMaNv(int maNv) {
+        this.maNv = maNv;
     }
     
 }

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.nv.category.ThemChuyenDiTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.036 s <<< FAILURE! - in com.nv.category.ThemChuyenDiTest
-themThanhCong  Time elapsed: 0.027 s  <<< ERROR!
-java.lang.NullPointerException
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.54 s <<< FAILURE! - in com.nv.category.ThemChuyenDiTest
+themThanhCong  Time elapsed: 0.032 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.nv.pojo.ChuyenXe.getTenChuyenXe()" because "d1" is null
 	at com.nv.saleticketapp/com.nv.category.ThemChuyenDiTest.themThanhCong(ThemChuyenDiTest.java:65)
 
